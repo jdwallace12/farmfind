@@ -5,7 +5,8 @@
     <p>Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to "Edit Profile", edit_user_registration_path %> | 
       <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
-      <%= link_to "Submit Your Farm", new_farm_path %> 
+      <%= link_to "Submit Your Farm", new_farm_path %> |
+      <a href="#">Edit your farm</a>
       </div>
       <% else %>
     <div class="span2 offset10">
@@ -51,7 +52,7 @@
         </div>
       </div>
       <div class="span2">
-        <a class="btn btn-large btn-primary">Search</a>
+        <a class="btn btn-large btn-info">Search</a>
       </div>
     </div>
   </div>
@@ -180,7 +181,12 @@
        <h3>
         Calling All Farmers 
        </h3>
-       <%= link_to "Farmers Sign Up Here", new_user_registration_path, :class => "btn btn-success" %>
+       <% if user_signed_in? %>
+       <%= link_to "Add Your Farm", new_farm_path, :class => "btn btn-large btn-success" %>
+       <% else %>
+       <%= link_to "Signup", new_user_registration_path, :class => "btn btn-large btn-info" %>
+       <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large" %>
+        <% end %>
         <p>
           List your farm and let the public learn about what you do.
         </p>
