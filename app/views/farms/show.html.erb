@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @farm.name %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @farm.state %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @farm.city %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @farm.address %>
+</p>
+
+<p>
+  <b>Certification:</b>
+  <%= @farm.certification %>
+</p>
+
+<p>
+  <b>Number of shares:</b>
+  <%= @farm.number_of_shares %>
+</p>
+
+<p>
+  <b>Share price:</b>
+  <%= @farm.share_price %>
+</p>
+
+<p>
+  <b>Farm description:</b>
+  <%= @farm.farm_description %>
+</p>
+
+
+<%= link_to 'Edit', edit_farm_path(@farm) %> |
+<%= link_to 'Back', farms_path %>
