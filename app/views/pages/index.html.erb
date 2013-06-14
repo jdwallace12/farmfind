@@ -1,9 +1,11 @@
 <div class="row-fluid">
  <div class="sign-in"> 
     <% if user_signed_in? %>
-    <div class="span3 offset9">
+    <div class="span4 offset8">
     <p>Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to "Edit Profile", edit_user_registration_path %> | <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <%= link_to "Edit Profile", edit_user_registration_path %> | 
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
+      <%= link_to "Submit Your Farm", new_farm_path %> 
       </div>
       <% else %>
     <div class="span2 offset10">

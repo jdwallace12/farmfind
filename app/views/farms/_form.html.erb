@@ -1,0 +1,23 @@
+<%= simple_form_for @farm do |f| %>
+<div class="new-farm-form">
+  <div class="span5">
+    <%= f.input :name, label: 'Enter the name of you farm' %>
+    <%= f.input :farm_description, label: 'Enter a description of your farm' %>
+    <%= f.input :certification, label: 'What kind of certifications does your farm have?' %>
+    <%= f.input :address, label: 'What is the address of your farm?' %>
+    <%= f.input :city, label: 'Which town or city is your farm located in?' %>
+    <%= f.input :state, label: 'Which state is you farm located in?' %>
+    <%= f.input :phone_number, label: 'Enter your phone number if you like' %>
+    <%= f.input :number_of_shares, label: 'How many shares do you offer?' %>
+    <%= f.input :share_price, label: 'How much does a share cost?' %>
+    <%= f.input :share_description, label: 'Give a description of what is included in the share' %>
+    <%= f.button :submit %>
+  </div>
+  <div class ="span5 offset2">
+    <h3>Give us some information about you CSA.</h3>
+    <p>Let your customers learn about your farm and where you are located.  Put your farm on the map, literally.
+    </p>
+  </div>
+</div>
+
+<% end %>
