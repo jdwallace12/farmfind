@@ -11,31 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611212634) do
-
-  create_table "comments", :force => true do |t|
-    t.text     "comment",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "farm_ownerships", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130614215211) do
 
   create_table "farms", :force => true do |t|
     t.string   "name",              :null => false
-    t.string   "adress",            :null => false
     t.string   "city",              :null => false
-    t.integer  "zipcode",           :null => false
-    t.string   "contact_info",      :null => false
     t.integer  "number_of_shares",  :null => false
     t.text     "share_description", :null => false
     t.text     "farm_description",  :null => false
-    t.integer  "phone_number"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.string   "address",           :null => false
+    t.string   "certification",     :null => false
+    t.integer  "share_price",       :null => false
+    t.string   "phone_number"
+    t.string   "state",             :null => false
   end
 
   create_table "users", :force => true do |t|
