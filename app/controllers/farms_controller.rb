@@ -34,7 +34,7 @@ class FarmsController < ApplicationController
 
   # GET /farms/1/edit
   def edit
-    @farm = Farm.find(params[:id])
+    @farm = @user.farm.find(params[:id])
   end
 
   # POST /farms
