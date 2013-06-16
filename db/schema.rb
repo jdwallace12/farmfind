@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130616203554) do
     t.integer  "user_id"
     t.string   "address",           :null => false
     t.string   "certification",     :null => false
+    t.string   "share_price",       :null => false
   end
 
   create_table "users", :force => true do |t|
