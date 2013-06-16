@@ -1,14 +1,17 @@
 <div class="row-fluid">
  <div class="sign-in"> 
+  <% if flash[:new_farm] %>
+    <p class="welcome">Farm created!</p>
+      <% end %>
     <% if user_signed_in? %>
     <div class="span4 offset8">
     <p>Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to "Edit Profile", edit_user_registration_path %> | 
       <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
       <%= link_to "Submit Your Farm", new_farm_path %> |
-      <%= @farm.each do |farm| %>
-      <%= link_to "Edit your farm", edit_farm_path(farm) %>
-      <% end %>
+      <!-- <#%= @farm.each do |farm| %>
+      <#%= link_to "Edit your farm", edit_farm_path(farm) %>
+      <#% end %> -->
       </div>
       <% else %>
     <div class="span2 offset10">

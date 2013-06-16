@@ -1,6 +1,7 @@
 class FarmsController < ApplicationController
-  # GET /farms
-  # GET /farms.json
+ 
+ before_filter :authenticate_user!
+  
   def index
     @farms = Farm.all
 
@@ -34,7 +35,7 @@ class FarmsController < ApplicationController
 
   # GET /farms/1/edit
   def edit
-    @farm = @user.farm.find(params[:id])
+    @farm = Farm.find(params[:id])
   end
 
   # POST /farms
@@ -44,7 +45,7 @@ class FarmsController < ApplicationController
 
     respond_to do |format|
       if @farm.save
-        format.html { redirect_to @farm, notice: 'Farm was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Farm was successfully created.' }
         format.json { render json: @farm, status: :created, location: @farm }
       else
         format.html { render action: "new" }
