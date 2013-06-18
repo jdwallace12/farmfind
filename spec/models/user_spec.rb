@@ -15,8 +15,4 @@ describe User do
     user.password = nil
     expect(user).to_not be_valid
   end
-
-  it "is be default not an admin user" do
-    expect(user.admin).to be_false
-  end
 end

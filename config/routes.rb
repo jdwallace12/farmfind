@@ -1,8 +1,9 @@
 Farmfind::Application.routes.draw do
  
- devise_for :users do
-  resources :farms
-end
+devise_for :users
+  
+resources :farms
+
 
 resources :pages
 get "pages/index"

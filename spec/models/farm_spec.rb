@@ -1,4 +1,4 @@
-describe Review do
+describe Farm do
   let(:farm) { FactoryGirl.create(:farm) }
 
   it "is valid" do

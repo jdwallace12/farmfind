@@ -8,6 +8,7 @@ FactoryGirl.define do
     sequence(:number_of_shares) { |n| "1 #{n}." }
     sequence(:share_price) { |n| "10 #{n}." }
     sequence(:share_description) { |n| "big box of veggies #{n}." }
+    certification "organic"
 
   end
 
@@ -15,10 +16,6 @@ FactoryGirl.define do
     sequence(:email) { |n| "johnisthebest@wallace.com" }
     password "12345678"
     password_confirmation "12345678"
-    admin false
-    factory :admin do
-      admin true
-    end
   end
 
 end
