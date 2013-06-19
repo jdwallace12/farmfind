@@ -11,5 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require twitter/bootstrap
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+
+  $(".alert").delay(3000).fadeOut(1000);
+} );

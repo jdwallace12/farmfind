@@ -3,7 +3,7 @@ Farmfind::Application.routes.draw do
 devise_for :users
 
 resources :users do
-  resources :farms, controller: "UsersFarms"
+  resources :farms, controller: "AdminFarms"
 end
   
 resources :farms

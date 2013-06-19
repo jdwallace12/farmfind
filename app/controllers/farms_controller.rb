@@ -35,7 +35,12 @@ class FarmsController < ApplicationController
 
   # GET /farms/1/edit
   def edit
-    @farm = Farm.find(params[:id])
+    #need to redirect if farm user does not = current_user
+    if @farm.user = current_user
+      @farm = Farm.find(params[:id])
+    else
+      format.html { redirect_to root_path, notice: "You can't edit farms that don't belong to you." }
+    end
   end
 
   # POST /farms
@@ -45,7 +50,7 @@ class FarmsController < ApplicationController
     @farm.user = current_user
     respond_to do |format|
       if @farm.save
-        format.html { redirect_to root_path, notice: 'Farm was successfully created.' }
+        format.html { redirect_to root_path, :flash => { :success => "Farm was successfully created." }}
         format.json { render json: @farm, status: :created, location: @farm }
       else
         format.html { render action: "new" }
@@ -58,11 +63,10 @@ class FarmsController < ApplicationController
   # PUT /farms/1.json
   def update
     @farm = Farm.find(params[:id])
-
+    binding.pry
     respond_to do |format|
       if @farm.update_attributes(params[:farm])
-        format.html { redirect_to @farm, notice: 'Farm was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to @farm, :flash => { :success => "Farm was successfully updated." }}
       else
         format.html { render action: "edit" }
         format.json { render json: @farm.errors, status: :unprocessable_entity }

@@ -2,8 +2,8 @@ require "spec_helper"
 
 feature "user can create farm" do
 
-  let(:user){ FactoryGirl.create(:user) }
-  let(:farm) {FactoryGirl.create(:farm, user: user) }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:farm) { FactoryGirl.create(:farm, user: user) }
 
   scenario "user can create farm" do
     sign_in_as user
