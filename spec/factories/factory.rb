@@ -9,7 +9,7 @@ FactoryGirl.define do
     sequence(:share_price) { |n| "10 #{n}." }
     sequence(:share_description) { |n| "big box of veggies #{n}." }
     certification "organic"
-
+    user
   end
 
   factory :user do
