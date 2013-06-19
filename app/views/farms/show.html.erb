@@ -1,11 +1,13 @@
 
 <div class="farm-show">
   <div class="row-fluid">
+    <div class="farm-header">
     <div class="span5">
       <h1>
         <%= @farm.name %>
       </h1>
     </div>
+  </div>
     <div class="span4 offset3">
       <h2>
         <%= @farm.city %>,
@@ -38,38 +40,38 @@
           <li>
           <p>
             Address:
-          <b><%= @farm.address %></b>
+          <b> <%= @farm.address %> </b>
         </p>
       </li>
       <li>
         <p>
             Phone Number:
-          <b><%= @farm.phone_number %></b>
+          <b> <%= @farm.phone_number %> </b>
         </p>
         <p>
         </li>
         <li>
           <p>
           Certification:
-          <b><%= @farm.certification %></b>
+          <b> <%= @farm.certification %> </b>
         </p>
       </li>
       <li>
         <p>
           Number of shares:
-         <b> <%= @farm.number_of_shares %></b>
+         <b> <%= @farm.number_of_shares %> </b>
         </p>
       </li>
       <li>
         <p>
           Share price:
-          <b><%= @farm.share_price %></b>
+          <b> <%= @farm.share_price %> </b>
         </p>
         </li>
         <li>
           <p>
             Website Address:
-            <b><%= @farm.website %></b>
+            <b> <%= @farm.website %> </b>
           </p>
         </li>
       </ul>
