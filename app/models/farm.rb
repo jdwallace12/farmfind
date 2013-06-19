@@ -1,5 +1,5 @@
 class Farm < ActiveRecord::Base
-  attr_accessible :address, :city, :state, :farm_description, :name, :number_of_shares, :phone_number, :share_description, :share_price, :certification
+  attr_accessible :address, :city, :state, :farm_description, :name, :number_of_shares, :phone_number, :share_description, :share_price, :certification, :website
   validates_presence_of :address
   validates_presence_of :city
   validates_presence_of :share_price
