@@ -1,6 +1,10 @@
 Farmfind::Application.routes.draw do
  
 devise_for :users
+
+resources :users do
+  resources :farms, controller: "UsersFarms"
+end
   
 resources :farms
 
