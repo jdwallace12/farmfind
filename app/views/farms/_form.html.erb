@@ -8,7 +8,7 @@
   <div class="span5 offset1">
     <%= f.input :name, label: 'Enter the name of you farm' %>
     <%= f.input :farm_description, label: 'Enter a description of your farm' %>
-    <%= f.input :certification, collection: ["organic", "conventional"], label: 'What kind of certifications does your farm have?' %>
+    <%= f.input :certification, collection: ["organic", "conventional", "none"], label: 'What kind of certifications does your farm have?' %>
     <%= f.input :address, label: 'What is the address of your farm?' %>
     <%= f.input :city, label: 'Which town or city is your farm located in?' %>
     <%= f.input :state, label: 'Which state is you farm located in?' %>

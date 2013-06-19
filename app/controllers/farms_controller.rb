@@ -42,7 +42,7 @@ class FarmsController < ApplicationController
   # POST /farms.json
   def create
     @farm = Farm.new(params[:farm])
-
+    @farm.user = current_user
     respond_to do |format|
       if @farm.save
         format.html { redirect_to root_path, notice: 'Farm was successfully created.' }
