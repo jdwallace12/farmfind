@@ -35,11 +35,12 @@ class FarmsController < ApplicationController
 
   # GET /farms/1/edit
   def edit
+    @farm = Farm.find(params[:id])
+ 
     #need to redirect if farm user does not = current_user
-    if @farm.user = current_user
-      @farm = Farm.find(params[:id])
-    else
-      format.html { redirect_to root_path, notice: "You can't edit farms that don't belong to you." }
+    unless @farm.user == current_user
+
+      redirect_to root_path, :flash => {error: "You can't edit farms that don't belong to you." }
     end
   end
 
@@ -63,7 +64,6 @@ class FarmsController < ApplicationController
   # PUT /farms/1.json
   def update
     @farm = Farm.find(params[:id])
-    binding.pry
     respond_to do |format|
       if @farm.update_attributes(params[:farm])
         format.html { redirect_to @farm, :flash => { :success => "Farm was successfully updated." }}
