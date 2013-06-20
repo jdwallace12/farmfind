@@ -1,12 +1,15 @@
 <div class="row-fluid">
  <div class="sign-in"> 
+  
     <% if user_signed_in? %>
     <div class="span4 offset8">
     <p>Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to "Edit Profile", edit_user_registration_path %> | 
       <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
       <%= link_to "Submit Your Farm", new_farm_path %> |
-      <a href="#">Edit your farm</a>
+      <!-- <#%= @farm.each do |farm| %>
+      <#%= link_to "Edit your farm", edit_farm_path(farm) %>
+      <#% end %> -->
       </div>
       <% else %>
     <div class="span2 offset10">
@@ -181,12 +184,13 @@
        </h3>
        <% if user_signed_in? %>
        <%= link_to "Add Your Farm", new_farm_path, :class => "btn btn-large btn-success" %>
+       <!--<#%= link_to "Edit Your Farm", edit_user_farm_path, :class => "btn btn-large btn-info" %>-->
        <% else %>
        <%= link_to "Signup", new_user_registration_path, :class => "btn btn-large btn-info" %>
        <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large" %>
         <% end %>
         <p>
-          List your farm and let the public learn about what you do.
+          List your farm for the public to see.
         </p>
         </div>
        </div>
