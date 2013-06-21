@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'simple_form'
 gem 'devise'
+gem 'geocoder'
+gem 'country_select'
 
 group :test, :development do
   gem 'rspec-rails'

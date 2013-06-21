@@ -3,13 +3,13 @@ class FarmsController < ApplicationController
  before_filter :authenticate_user!
   
   def index
-    @farms = Farm.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @farms }
+     if params[:location].present?
+      @farms = Farm.near(params[:location], params[:distance] || 10, order: :distance)
+    else
+      @farms = Farm.all
     end
   end
+ 
 
   # GET /farms/1
   # GET /farms/1.json
@@ -40,7 +40,7 @@ class FarmsController < ApplicationController
     #need to redirect if farm user does not = current_user
     unless @farm.user == current_user
 
-      redirect_to root_path, :flash => {error: "You can't edit farms that don't belong to you." }
+      redirect_to root_path, :flash => { error: "You can't edit farms that don't belong to you." }
     end
   end
 
