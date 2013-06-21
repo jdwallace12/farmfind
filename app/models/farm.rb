@@ -21,9 +21,8 @@ class Farm < ActiveRecord::Base
   after_validation :geocode, :if => :address_changed?
   
   acts_as_gmappable
-
+  
   def gmaps4rails_address
-    #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
     "#{self.address}, #{self.city}, #{state}, #{self.country}" 
   end
 
@@ -31,9 +30,31 @@ class Farm < ActiveRecord::Base
     "#{address}, #{city}, #{state}, #{country}"
   end
 
+
   def gmaps4rails_infowindow
+   
+    "<h2>#{self.name}</h2>
+    <h6>Location:</h6> 
+      <h5>#{self.city}, #{self.state}</h5> 
+    <hr>
+    <h6>Certification:</h6>
+    <p>#{self.certification}<p>
+    <h6>Number of Shares Offered:</h6>
+    <p>#{self.number_of_shares}<p>
     
+    <hr>
+    <h6>Share Description:</h6> 
+    <p>#{self.share_description}</p>"
   end
+
+  def gmaps4rails_marker_picture
+ {
+  "picture" =>"http://johnwallacedesigns.com/wp-content/uploads/2013/06/farm-2.png" ,
+   "width" => 37 , 
+   "height" => 37,
+ }
+end
+
 
 
 end

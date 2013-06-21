@@ -3,13 +3,10 @@ class FarmsController < ApplicationController
   before_filter :authenticate_user!
   @json = Farm.all.to_gmaps4rails
 
-  def index
-    if params[:search].present?
-      @farms = Farm.near(params[:search], 50, :order => :distance)
-    else
-     @farms = Farm.all
-    end
-  end
+def index
+  @farms = Farm.all
+    
+end
  
 
   # GET /farms/1

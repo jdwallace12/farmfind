@@ -1,6 +1,6 @@
-<div class="row-fluid">
- <div class="sign-in"> 
 
+<div class="row-fluid">
+ <div class="sign-in">
   <% if user_signed_in? %>
   <div class="span4 offset8">
     <p>Logged in as <strong><%= current_user.email %></strong>.
@@ -63,119 +63,11 @@
     </div>
   </div>
 </div>
-<div class="farm-list">
-  <div class="row-fluid">
-    <div class="span4">
-      <ul>
-         <li>
-          <h4>
-            Green Acres
-          </h4>
-          <h6>
-            Boston, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-         <li>
-          <h4>
-            Green Acres
-          </h4>
-          <h6>
-            Boston, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-        <li>
-          <h4>
-            Green Acres
-          </h4>
-          <h6>
-            Boston, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-        <li>
-          <h4>
-            Wallace Farms
-          </h4>
-          <h6>
-            Sudbury, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-        <li>
-          <h4>
-            Wallace Farms
-          </h4>
-          <h6>
-            Sudbury, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-        <li>
-          <h4>
-            Lorem Farm
-          </h4>
-          <h6>
-            Ipsum, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-        <li>
-          <h4>
-            Green Acres
-          </h4>
-          <h6>
-            Boston, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-        <li>
-          <h4>
-            Wallace Farms
-          </h4>
-          <h6>
-            Sudbury, MA
-          </h6>
-          <p>
-            This is a description. Vivamus vehicula ultrices mi, ut tincidunt urna
-            malesuada mattis. Aliquam mauris erat, convallis at facilisis eget, venenatis
-            sit amet diam. Maecenas euismod, leo non luctus iaculis...
-          </p>
-        </li>
-      </ul>
-    </div>
-    <div class="span8">
+<div class="map">
+   <div class="row-fluid">
+    <div class="span12">
       <%= gmaps4rails(@json) %>
-      </iframe>
+  
     </div>
   </div>
 </div>
