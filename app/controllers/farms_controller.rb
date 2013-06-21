@@ -2,11 +2,12 @@ class FarmsController < ApplicationController
  
  before_filter :authenticate_user!
   
+    
   def index
-     if params[:location].present?
-      @farms = Farm.near(params[:location], params[:distance] || 10, order: :distance)
+    if params[:search].present?
+      @farms = Farm.near(params[:search], 50, :order => :distance)
     else
-      @farms = Farm.all
+     @farms = Farm.all
     end
   end
  
