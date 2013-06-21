@@ -10,6 +10,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'geocoder'
 gem 'country_select'
+gem 'gmaps4rails'
 
 group :test, :development do
   gem 'rspec-rails'

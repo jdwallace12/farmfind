@@ -39,62 +39,57 @@
   </div>
 </div>
 <div class="map">
-  <div class="span12">
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=1600x700&sensor=false&zoom=16&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+  
+<div class="span4">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x800&sensor=false&zoom=8&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+</div>
+<div class="span4">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x800&sensor=false&zoom=10&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+</div>
+<div class="span4">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=800x800&sensor=false&zoom=14&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+</div>
 </div>
   <div class="farm-info">
-
+    <div class="row-fluid">
     <div class="span12">
       <h5>Farm Details</h5>
       <ul>
         <li>
-          <p>
-            Address:
-            <b> <%= @farm.address %> </b>
-          </p>
+          <p>Address:</p>
+            <strong> <%= @farm.address %> </strong>
         </li>
       <hr>
         <li>
-          <p>
-            Phone Number:
-            <b> <%= @farm.phone_number %> </b>
+            <p>Phone Number:</p>
+            <strong> <%= @farm.phone_number %> </strong>
           </p>
           <p>
           </li>
          <hr>
           <li>
-            <p>
-              Certification:
-              <b> <%= @farm.certification %> </b>
-            </p>
+            <p>Certification:</p>
+              <strong> <%= @farm.certification %> </strong>
           </li>
           <hr>
           <li>
-            <p>
-              Number of shares:
-              <b> <%= @farm.number_of_shares %> </b>
-            </p>
+            <p> Number of shares:</p>
+              <strong> <%= @farm.number_of_shares %> </strong>
           </li>
           <hr>
           <li>
-            <p>
-              Share price:
-              <b> <%= @farm.share_price %> </b>
-            </p>
+            <p>Share price:</p>
+              <strong> <%= @farm.share_price %> </strong>
           </li>
           <hr>
           <li>
-            <p>
-              Website Address:
-              <b> <%= @farm.website %> </b>
-            </p>
+            <p>Website Address:</p>
+              <strong> <%= @farm.website %> </strong>
           </li>
           <hr>
           <li>
-            <p>
-              Email:
-              <b> <%= @farm.user.email %> </b>
-            </p>
+            <p>Email:</p>
+              <strong> <%= @farm.user.email %> </strong>
           </li>
         </ul>
       </div>

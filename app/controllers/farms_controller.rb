@@ -1,8 +1,8 @@
 class FarmsController < ApplicationController
  
- before_filter :authenticate_user!
-  
-    
+  before_filter :authenticate_user!
+  @json = Farm.all.to_gmaps4rails
+
   def index
     if params[:search].present?
       @farms = Farm.near(params[:search], 50, :order => :distance)
@@ -16,7 +16,6 @@ class FarmsController < ApplicationController
   # GET /farms/1.json
   def show
     @farm = Farm.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @farm }
