@@ -8,11 +8,16 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'simple_form'
 gem 'devise'
+gem 'geocoder'
+gem 'country_select'
+gem 'gmaps4rails'
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'pry-rails'
 end
 
 # Gems used only for assets and not required
