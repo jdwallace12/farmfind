@@ -1,9 +1,15 @@
 Farmfind::Application.routes.draw do
  
-  devise_for :users
-  get "pages/index"
-  resources :pages
-  resources :farms
+devise_for :users
+
+resources :users do
+  resources :farms, controller: "AdminFarms"
+end
+  
+resources :farms
+
+resources :pages
+get "pages/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
