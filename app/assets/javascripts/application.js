@@ -19,6 +19,12 @@ $(function() {
 
   $(".alert").delay(3000).fadeOut(1000);
 
+
+$("#searchfarm").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+});
+
 } );
 
 

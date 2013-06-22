@@ -1,12 +1,17 @@
 class FarmsController < ApplicationController
  
   before_filter :authenticate_user!
-  @json = Farm.all.to_gmaps4rails
 
 def index
-  @farms = Farm.all
-  @json = Farm.all.to_gmaps4rails
+  # @farms = Farm.all
+  # @json = Farm.all.to_gmaps4rails
+    if params[:search].present?
+    @farms = Farm.near(params[:search], 50, :order => :distance)
+  else
+    @farms = Farm.all
+  end
 end
+
  
 
   # GET /farms/1
@@ -47,6 +52,7 @@ end
     @farm.user = current_user
     respond_to do |format|
       if @farm.save
+        @json = Farm.all.to_gmaps4rails
         format.html { redirect_to root_path, :flash => { :success => "Farm was successfully created." }}
         format.json { render json: @farm, status: :created, location: @farm }
       else

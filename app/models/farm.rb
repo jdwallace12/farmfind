@@ -30,7 +30,6 @@ class Farm < ActiveRecord::Base
     "#{address}, #{city}, #{state}, #{country}"
   end
 
-
   def gmaps4rails_infowindow
    
     "<h2>#{self.name}</h2>
@@ -57,7 +56,6 @@ class Farm < ActiveRecord::Base
     <h6>Farm Description:</h6> 
     <p>#{self.farm_description}</p>"
   end
-
 
 
   def gmaps4rails_marker_picture
