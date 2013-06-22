@@ -35,26 +35,36 @@ class Farm < ActiveRecord::Base
    
     "<h2>#{self.name}</h2>
     <h6>Location:</h6> 
-      <h5>#{self.city}, #{self.state}</h5> 
+    <h5>#{self.city}, #{self.state}</h5> 
+    <hr>
+    <h6>Website:</h6>
+    <p>#{self.website}<p>
+    <h6>Phone Number:</h6>
+    <p>#{self.phone_number}<p>
+    <h6>Email:</h6>
+    <p>#{self.user.email}<p>
     <hr>
     <h6>Certification:</h6>
     <p>#{self.certification}<p>
     <h6>Number of Shares Offered:</h6>
     <p>#{self.number_of_shares}<p>
-    
+    <h6>Share Price:</h6>
+    <p>#{self.share_price}<p>
     <hr>
     <h6>Share Description:</h6> 
-    <p>#{self.share_description}</p>"
+    <p>#{self.share_description}</p>
+    <hr>
+    <h6>Farm Description:</h6> 
+    <p>#{self.farm_description}</p>"
   end
 
+
+
   def gmaps4rails_marker_picture
- {
-  "picture" =>"http://johnwallacedesigns.com/wp-content/uploads/2013/06/farm-2.png" ,
-   "width" => 37 , 
-   "height" => 37,
- }
-end
-
-
-
+    {
+      "picture" =>"http://johnwallacedesigns.com/wp-content/uploads/2013/06/farm-2.png" ,
+       "width" => 37 , 
+       "height" => 37,
+    }
+  end
 end

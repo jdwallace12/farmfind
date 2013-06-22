@@ -5,7 +5,7 @@ class FarmsController < ApplicationController
 
 def index
   @farms = Farm.all
-    
+  @json = Farm.all.to_gmaps4rails
 end
  
 
@@ -41,8 +41,7 @@ end
     end
   end
 
-  # POST /farms
-  # POST /farms.json
+
   def create
     @farm = Farm.new(params[:farm])
     @farm.user = current_user
@@ -53,12 +52,12 @@ end
       else
         format.html { render action: "new" }
         format.json { render json: @farm.errors, status: :unprocessable_entity }
+
       end
     end
   end
 
-  # PUT /farms/1
-  # PUT /farms/1.json
+
   def update
     @farm = Farm.find(params[:id])
     respond_to do |format|
