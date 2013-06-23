@@ -4,7 +4,6 @@ class FarmsController < ApplicationController
 
 def index
   @farms = Farm.all
-  @json = Farm.all.to_gmaps4rails
 end
 
  
@@ -15,7 +14,6 @@ end
     @farm = Farm.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      @json = Farm.all.to_gmaps4rails
       format.json { render json: @farm }
     end
   end
@@ -24,7 +22,6 @@ end
   # GET /farms/new.json
   def new
     @farm = Farm.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @farm }
@@ -34,10 +31,8 @@ end
   # GET /farms/1/edit
   def edit
     @farm = Farm.find(params[:id])
- 
     #need to redirect if farm user does not = current_user
     unless @farm.user == current_user
-      @json = Farm.all.to_gmaps4rails
       redirect_to root_path, :flash => { error: "You can't edit farms that don't belong to you." }
     end
   end
@@ -64,8 +59,8 @@ end
     @farm = Farm.find(params[:id])
     respond_to do |format|
       if @farm.update_attributes(params[:farm])
-        @json = Farm.all.to_gmaps4rails
         format.html { redirect_to @farm, :flash => { :success => "Farm was successfully updated." }}
+         @json = Farm.all.to_gmaps4rails
       else
         format.html { render action: "edit" }
         format.json { render json: @farm.errors, status: :unprocessable_entity }

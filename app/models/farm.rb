@@ -17,14 +17,20 @@ class Farm < ActiveRecord::Base
   validates_presence_of :user
   
   belongs_to :user
-
   
+  geocoded_by :full_address
+  after_validation :geocode, :if => :address_changed?
+  
+  def full_address
+    "#{address}, #{city}, #{state}, #{country}"
+  end
+
   acts_as_gmappable
   
+
   def gmaps4rails_address
     "#{self.address}, #{self.city}, #{self.state}, #{self.country}" 
   end
-
 
   def gmaps4rails_infowindow
    
