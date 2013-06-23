@@ -11,6 +11,7 @@ gem 'devise'
 gem 'country_select'
 gem 'gmaps4rails'
 gem 'geocoder'
+gem 'carrierwave'
 
 group :test, :development do
   gem 'rspec-rails'

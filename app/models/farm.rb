@@ -1,8 +1,9 @@
 class Farm < ActiveRecord::Base
   attr_accessible :address, :city, :state, :farm_description, :name,
     :number_of_shares, :phone_number, :share_description, :share_price,
-    :certification, :website, :country, :longitude, :latitude, :gmaps
+    :certification, :website, :country, :longitude, :latitude, :gmaps, :image
 
+  mount_uploader :image, ImageUploader
 
   validates_presence_of :address
   validates_presence_of :city
