@@ -21,6 +21,7 @@ class Farm < ActiveRecord::Base
   
   belongs_to :user
   
+
   geocoded_by :full_address
   after_validation :geocode, :if => :address_changed?
   
@@ -38,6 +39,7 @@ class Farm < ActiveRecord::Base
   def gmaps4rails_infowindow
    
     "<h2>#{self.name}</h2>
+     <img src=\"#{self.image}\">
     <h6>Location:</h6> 
     <h5>#{self.city}, #{self.state}</h5> 
     <hr>
