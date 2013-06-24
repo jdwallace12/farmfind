@@ -17,8 +17,6 @@ class Farm < ActiveRecord::Base
   validates_presence_of :country
   validates_presence_of :user
   
-  validates :website, :format => { :with => /[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ }
-  
   belongs_to :user
   
 
@@ -39,7 +37,7 @@ class Farm < ActiveRecord::Base
   def gmaps4rails_infowindow
    
     "<h2>#{self.name}</h2>
-     <img src=\"#{self.image}\">
+     <img src=\"#{self.image.profile}\">
     <h6>Location:</h6> 
     <h5>#{self.city}, #{self.state}</h5> 
     <hr>

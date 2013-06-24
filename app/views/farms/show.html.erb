@@ -20,7 +20,7 @@
   <div class="row-fluid">
     <div class="farm-photo" class="span12">
 
-      <%= image_tag @farm.image_url.to_s %>
+      <%= image_tag @farm.image_url(:profile).to_s %>
       
     </div>
   </div>
@@ -101,17 +101,15 @@
 
     <div class="bottom-nav">
       <div class="row-fluid">
-        <div class="span2">
-          <%= link_to "I am Done", root_path, :class => "btn btn-large btn-success" %>
+        <div class="span3">
+          <%= link_to "I am Done", root_path, :class => "btn btn-success" %>
+    
+          <%= link_to "View All My Farms", farms_path, :class => "btn btn-info" %>
         </div>
-        <div class="span2">
-          <%= link_to "View All My Farms", farms_path, :class => "btn btn-large btn-info" %>
-        </div>
-        <div class="span2 offset4">
-          <%= link_to "Edit This Farm", edit_farm_path(@farm), :class => "btn btn-large btn-warning" %>
-        </div>
-        <div class="span2">
-          <%= link_to "Delete This Farm", edit_farm_path(@farm), :class => "btn btn-large btn-danger" %>
+        <div class="span3 offset6">
+          <%= link_to "Edit This Farm", edit_farm_path(@farm), :class => "btn btn-warning" %>
+      
+          <%= link_to "Delete This Farm", edit_farm_path(@farm), :class => "btn btn-danger" %>
 
         </div>
       </div>
