@@ -20,7 +20,7 @@ feature "user can create farm" do
 
   def create_farm
     name = "Zopf's Beets and Beers"
-    click_link "Submit a Farm"
+    click_link "Add Your Farm"
     fill_in "farm_name", with: name
     fill_in "farm_farm_description", with: "world class beets"
     select("organic", from: "farm_certification")
