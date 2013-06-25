@@ -3,13 +3,7 @@ class FarmsController < ApplicationController
   before_filter :authenticate_user!
 
 def index
-  # @farms = Farm.all
-  # @json = Farm.all.to_gmaps4rails
-    if params[:search].present?
-    @farms = Farm.near(params[:search], 50, :order => :distance)
-  else
-    @farms = Farm.all
-  end
+  @farms = Farm.all
 end
 
  
@@ -28,7 +22,6 @@ end
   # GET /farms/new.json
   def new
     @farm = Farm.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @farm }
@@ -38,10 +31,8 @@ end
   # GET /farms/1/edit
   def edit
     @farm = Farm.find(params[:id])
- 
     #need to redirect if farm user does not = current_user
     unless @farm.user == current_user
-
       redirect_to root_path, :flash => { error: "You can't edit farms that don't belong to you." }
     end
   end
@@ -69,6 +60,7 @@ end
     respond_to do |format|
       if @farm.update_attributes(params[:farm])
         format.html { redirect_to @farm, :flash => { :success => "Farm was successfully updated." }}
+         @json = Farm.all.to_gmaps4rails
       else
         format.html { render action: "edit" }
         format.json { render json: @farm.errors, status: :unprocessable_entity }

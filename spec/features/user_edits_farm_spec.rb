@@ -8,9 +8,9 @@ describe "user edits a farm" do
   it "A user edits their own farm" do
     sign_in_as user
     visit edit_farm_path(farm)
-    fill_in "farm_share_description", with: "2nd rate beets"
+    fill_in "farm_share_description", with: "big box of veggies."
     click_button "Update Farm"
-    expect(farm.reload.share_description).to eql("2nd rate beets")
+    expect(farm.reload.share_description).to eql("big box of veggies.")
   end
   
   it "A uses can not edit some one elses farm" do
