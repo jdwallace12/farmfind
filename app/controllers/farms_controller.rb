@@ -2,14 +2,11 @@ class FarmsController < ApplicationController
  
   before_filter :authenticate_user!
 
-def index
-  @farms = Farm.all
-end
+  def index
+    @farms = current_user.farms
+  end
 
- 
 
-  # GET /farms/1
-  # GET /farms/1.json
   def show
     @farm = Farm.find(params[:id])
     respond_to do |format|
@@ -18,8 +15,6 @@ end
     end
   end
 
-  # GET /farms/new
-  # GET /farms/new.json
   def new
     @farm = Farm.new
     respond_to do |format|
@@ -28,7 +23,6 @@ end
     end
   end
 
-  # GET /farms/1/edit
   def edit
     @farm = Farm.find(params[:id])
     #need to redirect if farm user does not = current_user
@@ -68,8 +62,7 @@ end
     end
   end
 
-  # DELETE /farms/1
-  # DELETE /farms/1.json
+
   def destroy
     @farm = Farm.find(params[:id])
     @farm.destroy

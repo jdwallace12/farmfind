@@ -1,12 +1,38 @@
-  <% if current_user %>
-    <% @farms.each do |farm| %>
-    <div class="row-fluid">
-      <div class="span6">
-       
-        <div class="text-center">
-          <img src="http://placehold.it/600x300">
-       </div>
-     </div>
-     <% end %>
+<div class="profile-heading">
+  <div class="row-fluid">
+    <div class="span6 offset3">
+      <h1>Farms you currently have</h1>
+    </div>
   </div>
-  <% end %>
+</div>
+<div class="farm-profile-list">
+  <% @farms.each do |farm| %>
+  <div class="profiles">
+    <div class="row-fluid">
+      <div class="span6 offset3">
+        <div class="span2">
+          <%= image_tag farm.image_url(:thumb).to_s %>
+        </div>
+        <div class="span10 offset 2">
+          <h6>Farm Name:</h6>
+          <h4> <%= farm.name %></h4>
+          <div class="buttons-list">
+            <%= link_to "View This Farm", farm_path(farm), :class => "btn btn-large btn-info" %>
+            <div class="danger-buttons">
+            <%= link_to "Edit This Farm", edit_farm_path(farm), :class => "btn btn-small btn-warning" %>
+            <%= link_to "Delete This Farm", farm_path(farm), method: :delete, :class => "btn btn-small btn-danger" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<div class="back-home">
+  <div class="row-fluid">
+    <div class="span4 offset8">
+      <%= link_to "I am done, take me back", root_path, :class => "btn btn-large btn-success" %>
+    </div>
+  </div>
+</div>
