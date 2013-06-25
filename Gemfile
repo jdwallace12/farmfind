@@ -13,6 +13,7 @@ gem 'gmaps4rails'
 gem 'geocoder'
 gem 'carrierwave'
 gem 'rmagick', '2.13.2'
+gem 'rails_admin'
 
 group :test, :development do
   gem 'rspec-rails'
