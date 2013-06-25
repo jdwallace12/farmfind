@@ -1,15 +1,22 @@
 require "spec_helper"
 
-feature "user can edit their farm" do
+feature "user with a farm creates and sees their farm on the farm index page" do
+
   let(:user) { FactoryGirl.create(:user) }
   let(:farm) { FactoryGirl.create(:farm, user: user) }
 
-  scenario "user can edit their farm" do
+  scenario "user can create farm" do
     sign_in_as user
     create_farm
-    click_link "Edit A Farm"
-    expect(current_user.farms.edit).to have_content("Edit Your Farm Information")
+    expect(user.farms.count).to eql(1)
   end
+
+  scenario "user clicks view farm and directed to index page of their farm(s)" do
+    sign_in_as user
+    click_link "View Your Farm"
+    expect(user.farms.count).to eql(1)
+  end
+ 
 
   def create_farm
     name = "Zopf's Beets and Beers"
@@ -30,4 +37,5 @@ feature "user can edit their farm" do
     click_button "Create Farm"
     expect(Farm.find_by_name(name)).to_not be_nil
   end
+
 end
