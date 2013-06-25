@@ -14,6 +14,7 @@ gem 'geocoder'
 gem 'carrierwave'
 gem 'rmagick', '2.13.2'
 gem 'rails_admin'
+gem "cancan"
 
 group :test, :development do
   gem 'rspec-rails'
