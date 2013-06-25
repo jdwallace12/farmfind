@@ -64,12 +64,14 @@ class FarmsController < ApplicationController
 
 
   def destroy
+    
     @farm = Farm.find(params[:id])
     @farm.destroy
 
     respond_to do |format|
       format.html { redirect_to farms_url }
       format.json { head :no_content }
+   
     end
   end
 end
