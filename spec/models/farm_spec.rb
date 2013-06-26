@@ -46,6 +46,12 @@ describe Farm do
     expect(farm.errors[:state]).to_not be_empty
   end
 
+  it "is not valid without country" do
+    farm.country = nil
+    expect(farm).to_not be_valid
+    expect(farm.errors[:country]).to_not be_empty
+  end
+
   it "is not valid without a number of shares" do
     farm.number_of_shares = nil
     expect(farm).to_not be_valid

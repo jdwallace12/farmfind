@@ -24,10 +24,9 @@ feature "user with a farm creates and sees their farm on the farm index page" do
     fill_in "farm_name", with: name
     fill_in "farm_farm_description", with: "world class beets"
     select("organic", from: "farm_certification")
-    fill_in "farm_address", with: "88 Beet Way"
-    fill_in "farm_city", with: "Miami"
-    fill_in "farm_state", with: "Ohio"
-    select("United States", from: "country")
+    fill_in "farm_address", with: "15 Hilltop Road"
+    fill_in "farm_city", with: "Sudbury"
+    fill_in "farm_state", with: "MA"
     fill_in "farm_phone_number", with: "1-800-BEEEEETS"
     fill_in "farm_website", with: "www.zopfbeets"
     fill_in "farm_number_of_shares", with: "500"

@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'simple_form'
+# gem 'simple_form'
 gem 'devise'
 gem 'country_select'
 gem 'gmaps4rails'
@@ -15,7 +15,8 @@ gem 'carrierwave'
 gem 'rmagick', '2.13.2'
 gem 'rails_admin'
 gem "cancan"
-
+gem 'simple_form_fancy_uploads'
+gem 'simple_form', '2.0.0'
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'

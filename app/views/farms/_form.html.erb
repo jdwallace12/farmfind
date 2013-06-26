@@ -20,7 +20,9 @@
     <%= f.input :number_of_shares, as: :string, label: 'How many shares do you offer?' %>
     <%= f.input :share_price, as: :string, label: 'How much does a share cost? in $US ' %>
     <%= f.input :share_description, label: 'Give a description of what is included in the share' %>
-    <%= f.input :image, label: 'Upload a photo of your farm' %>
+    <label>Upload a photo of your farm</label>
+    <div id="image_preview"></div>
+    <%= f.input :image, label: false, input_html: {id: 'hellofarm'} %>
     <%= f.button :submit %>
     <br>
     <% end %>
@@ -29,3 +31,33 @@
   </div>
 </div>
 
+
+<script>
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+            $('#image_preview').append('<img src="' + e.target.result + '" class="thumbnail"/>')
+
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('hellofarm').addEventListener('change', handleFileSelect, false);
+</script>
