@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role
   # attr_accessible :title, :body
   has_many :farms, :dependent => :destroy
+  
   def admin?
     role == "admin"
   end
