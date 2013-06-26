@@ -5,14 +5,14 @@
     <p>Let your customers learn about your farm and where you are located.  Put your farm on the map, literally.
     </p>
   </div>
-  <div class="form-bg">
-  <div class="span5 offset1">
+
+  <div class="span5 offset3">
     <div class="form-bg">
     <%= f.input :name, label: 'Enter the name of you farm' %>
     <%= f.input :farm_description, label: 'Enter a description of your farm' %>
     <%= f.input :certification, collection: ["organic", "conventional", "none"], label: 'What kind of certifications does your farm have?' %>
     <%= f.input :address, label: 'What is the address of your farm?' %>
-    <%= f.input :city, label: 'What city are you in?' %>
+    <%= f.input :city, label: 'What city/town are you in?' %>
     <%= f.input :state, label: 'Which state is you farm located in?' %>
     <%= f.input :country, label: 'What country are you in?' %>
     <%= f.input :phone_number, label: 'Enter your phone number if you like' %>
@@ -22,9 +22,10 @@
     <%= f.input :share_description, label: 'Give a description of what is included in the share' %>
     <%= f.input :image, label: 'Upload a photo of your farm' %>
     <%= f.button :submit %>
+    <br>
+    <% end %>
+    <br>
     </div>
   </div>
- 
 </div>
 
-<% end %>
