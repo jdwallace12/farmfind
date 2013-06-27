@@ -24,7 +24,7 @@
     <label>Your Current Farm Photo:</label>
         <%= image_tag @farm.image_url(:thumb).to_s %>
     </div>
-    <label>Upload a new photo or change the existing one:</label>
+    <label>Upload a photo or change the existing one:</label>
     <div id="image_preview"></div>
     <%= f.input :image, label: false, input_html: {id: 'hellofarm'} %>
     <%= f.button :submit %>

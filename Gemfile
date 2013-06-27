@@ -17,12 +17,14 @@ gem 'rails_admin'
 gem "cancan"
 gem 'simple_form_fancy_uploads'
 gem 'simple_form', '2.0.0'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'pry-rails'
+  gem "shoulda-matchers"
 end
 
 # Gems used only for assets and not required

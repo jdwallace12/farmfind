@@ -1,6 +1,9 @@
 describe Farm do
   let(:farm) { FactoryGirl.create(:farm) }
 
+  it { should belong_to(:user) }
+
+
   it "is valid" do
     expect(farm).to be_valid
   end
