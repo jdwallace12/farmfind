@@ -1,3 +1,11 @@
+
+#map img
+  max-width: none
+
+#map label
+  width: auto
+  display:inline
+
 body
   background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/farm3.jpg")
     
@@ -12,59 +20,22 @@ h1, h2, h3, h4, h5, h6
 a 
   font-family: 'Open Sans'
 
-input::-webkit-input-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #D6D6D6
- 
-
-input:-moz-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #D6D6D6
- 
-
-input::-moz-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #D6D6D6
-  
-
-input:hover:-ms-input-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #9E9E9E
-
-input:hover::-webkit-input-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #9E9E9E
-
-input:hover:-moz-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #9E9E9E
-
-input:hover::-moz-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #9E9E9E
-
-input:hover:-ms-input-placeholder
-  padding-left: 5px
-  padding-top: 8px
-  color: #9E9E9E
-
 label
   color: white
   font-family: 'Open Sans'
   font-size: 25px
   padding: 2px
   line-height: 1.5
+  margin-left: 2%
+
 
 input
   font-size: 20px
   font-family: 'Open Sans'
+
+input[type="file"]
+  color: white
+  padding: 10px
 
 textarea
   font-size: 28px
@@ -74,15 +45,22 @@ textarea
   border: 1px solid #aaa
   box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset
   border-radius: 2px
-  width: 100%
+  width: 92%
   max-height: 200px
   font-family: 'Open Sans'
   line-height: 1.5
+  margin-left: 3%
 
 .input:focus, textarea:focus
   background: #fff
   border: 1px solid #555
   box-shadow: 0 0 3px #aaa
+
+.account-change
+  color: white
+
+.account-change a
+  font-size: 20px
 
 .sign-in a
   color: white
@@ -104,15 +82,17 @@ textarea
   text-align: center
 
 .jumbotron h1
-  font-size: 115px
+  font-size: 110px
   line-height: 1
   color: white
   text-shadow: 0px 1px 2px #000
+  -moz-text-shadow: 0px 1px 2px #000
 
 .jumbotron .lead
   font-size: 24px
   line-height: 1.25
   color: white
+  text-shadow: 0px 1px 2px #000
 
 .jumbotron .btn
   font-size: 21px
@@ -137,12 +117,15 @@ textarea
   padding: 10px
 
 .farm-list li:hover
-  color: #F4F4F4
-  background-color: #5bb65a
+  color: rgb(83, 69, 69)
+  background-color: rgba(79, 213, 78, 0.22)
 
 .farm-list
   background-color: white
   border-bottom: 1px solid white
+
+.farm-list [class*="span"]
+  margin-left: 0
 
 .search
   padding: 5px 0
@@ -154,34 +137,60 @@ textarea
 .search a 
   margin-top: 27px
 
+.search-button
+  display: inline
+
 .search-heading
   margin-top: 25px
     
 .controls input
-  width: 97%
-  height: 40px
+  display: inline
   font-size: 28px
-  margin-top: 17px
+  margin-top: 4px
+  margin-left: 3% 
+  height: 50px
+  width: 92%
 
-.footer
+.controls select
+  margin-left: 3%
+
+select
+  margin-left: 3% 
+
+input[type="submit"].btn.btn-large
+  display: inline
+  width: 115px
+  height: 48px
+
+.search .span6
+  width: 65%
+
+.search-bar
+  display: inline
+  input
+    height: 40px
+    margin-bottom: -3px
+    width: 82%
+
+#footer
   background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/debut_light.png")
   color: gray
   border-top: 1px solid white
-  padding: 15px
+  padding: 10px
 
-.footer p 
+#footer p 
   padding: 5px 0
 
-.footer .right
+#footer .right
   border-left: 1px dotted #D6D6D6
   padding: 5px 20px
 
 .footer-bar
   background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/squairy_light.png")
   height: 40px
-  margin-top: -10px
+  margin-top: -4px
   border-bottom: 1px solid #D6D6D6
-  border-top: 1px solid #D6D6D6
+  border-top: 1px solid #eee
 
 .login-form
   color: white
@@ -202,11 +211,16 @@ textarea
   font-size: 28px
   font-family: 'Open Sans'
   
+.new-farm-form
+  padding: 20px
+
+.new-farm-form .btn
+  margin-left: 79%
 
 .new-farm-form h2
   color: white
   font-family: 'Montserrat'
-  padding-top: 55px
+  padding-top: 40px
 
 .new-farm-form h1
   color: white
@@ -215,3 +229,150 @@ textarea
   padding: 20px
   font-size: 4em
   text-shadow: 1px 1px 1px #000
+
+.farm-show
+  padding: 20px
+
+.farm-header
+  padding: 0px 0px 22px 15px
+  background-color: rgba(172, 189, 177, 0.2)
+  border: 1px solid rgba(57, 90, 57, 0.56)
+
+.farm-show h1
+  font-size: 4em
+  padding: 10px
+  color: rgba(40, 131, 153, 0.78)
+
+.farm-photo img
+  margin-top: 20px
+
+.farm-show .span4 h1
+  padding: 10px
+  font-size: 3em
+  color: rgba(40, 131, 153, 0.74)
+
+.farm-description p
+  padding: 0px 20px 10px 20px
+
+.farm-description
+  color: black
+  font-size: 18px
+  line-height: 1.5
+  padding: 10px 30px 20px 10px
+  border-top: 1px solid #ccc
+  border-bottom: 1px solid #ccc
+  background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/debut_light.png")
+
+.map a
+  padding: 10px
+
+.map img
+  width: 100%
+
+.farm-info-wrap
+  background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/squairy_light.png")  
+
+.farm-info .span12 h5
+  padding-left: 10px
+
+.farm-info .span12
+  padding: 10px 0px 10px 50px
+  background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/debut_light.png")
+  border-bottom: 1px solid #F0F0F0
+  border-top: 1px solid #ccc
+  ul
+    list-style: none
+  li
+    padding-top: 5px
+
+.farm-info p
+  color: #333333
+
+.farm-photo
+  padding-bottom: 20px
+
+.bottom-nav
+  padding: 20px
+  border-top: 1px solid #ccc
+  border-bottom: 1px solid #B0B0B0
+
+.profile-heading h1
+  color: white
+  font-size: 3.5em
+  padding-top: 10px
+
+.farm-profile-list
+  padding-top: 20px
+
+.profiles
+  padding-top: 20px
+
+.profiles .span6
+  border: 1px solid #C2C2C2
+  background-image: url("http://johnwallacedesigns.com/wp-content/uploads/2013/06/debut_light.png")
+
+.farm-list-info
+  padding-left: 10px
+
+.buttons-list
+  padding-top: 1%
+
+.danger-buttons
+  display: inline
+  padding-left: 5%
+
+.back-home
+  padding-top: 3%
+  margin-right: 6%
+
+.no-farms
+  color: white
+  font-size: 3.5em
+  padding-top: 2%
+
+.form-bg
+  background-color: rgba(33, 34, 27, 0.48)
+  width: 106%
+  border-radius: 7px
+
+.current-image
+  padding: 0% 3% 10% 3%
+
+@media (max-width: 600px)
+  .jumbotron
+    margin: 40px 0
+    h1
+      font-size: 60px
+      line-height: 1
+      color: white
+      text-shadow: 0px 1px 2px #000
+
+@media (min-width: 2000px)
+  .welcome
+    padding-bottom: 580px
+  .jumbotron
+    padding-top: 100px
+  .sign-in
+    padding-left: 45%
+
+@media (min-width: 1900px) and (max-width: 2000px)
+  .welcome
+    padding-bottom: 500px
+  .jumbotron
+    padding-top: 100px
+
+@media (min-width: 1600px) and (max-width: 1900px)
+  .welcome
+    padding-bottom: 250px
+  .jumbotron
+    padding-top: 60px
+
+@media (min-width: 1390px) and (max-width: 1600px)
+  .welcome
+    padding-bottom: 140px
+  .jumbotron
+    padding-top: 20px
+
+@media (min-width: 1350px) and (max-width: 1390px)
+  .jumbotron
+    padding-top: 30px

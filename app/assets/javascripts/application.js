@@ -11,5 +11,19 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require twitter/bootstrap
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+
+  $(".alert").delay(1500).fadeOut(1000);
+
+  $("#searchfarm").click(function() {
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    return false;
+  });
+
+} );
+
+

@@ -1,45 +1,117 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @farm.name %>
-</p>
+<div class="farm-show">
+  <div class="farm-header">
+    <div class="row-fluid">
+      <div class="span8">
+        <h5>Farm Name:</h5>
+        <h1>
+          <%= @farm.name %>
+        </h1>
+      </div>
+      <div class="span4">
+        <h5>Location:</h5>
+        <h1>
+          <%= @farm.city %>,
+          <%= @farm.state %>
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="farm-photo" class="span12">
 
-<p>
-  <b>State:</b>
-  <%= @farm.state %>
-</p>
+      <%= image_tag @farm.image_url(:profile).to_s %>
+      
+    </div>
+  </div>
+  <div class="farm-info-wrap">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="farm-description">
+          <h5>Farm Description:</h5>
+          <p>
+            <%= @farm.farm_description %>
+          </p>
+          <hr>
 
-<p>
-  <b>City:</b>
-  <%= @farm.city %>
-</p>
+          <h5>Share Description</h5>
+          <p>
+            <%= @farm.share_description %>
+          </p>
+        </div>
+      </div>
+      <div class="map">
 
-<p>
-  <b>Address:</b>
-  <%= @farm.address %>
-</p>
+        <div class="span4">
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x600&sensor=false&zoom=8&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+        </div>
+        <div class="span4">
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x600&sensor=false&zoom=10&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+        </div>
+        <div class="span4">
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x600&sensor=false&zoom=14&markers=#{@farm.latitude}%2C#{@farm.longitude}" %>
+        </div>
+      </div>
+      <div class="farm-info">
+        <div class="row-fluid">
+          <div class="span12">
+            <h5>Farm Details</h5>
+            <ul>
+              <li>
+                <p>Address:</p>
+                <strong> <%= @farm.address %> </strong>
+              </li>
+              <hr>
+              <li>
+                <p>Phone Number:</p>
+                <strong> <%= @farm.phone_number %> </strong>
+              </p>
+              <p>
+              </li>
+              <hr>
+              <li>
+                <p>Certification:</p>
+                <strong> <%= @farm.certification %> </strong>
+              </li>
+              <hr>
+              <li>
+                <p> Number of shares:</p>
+                <strong> <%= @farm.number_of_shares %> </strong>
+              </li>
+              <hr>
+              <li>
+                <p>Share price:</p>
+                <strong> <%= @farm.share_price %> </strong>
+              </li>
+              <hr>
+              <li>
+                <p>Website Address:</p>
+                <strong> <a href="http://<%= @farm.website %>" target="_blank"> <%=@farm.website%> </a></strong>
+              </li>
+              <hr>
+              <li>
+                <p>Email:</p>
+                <strong> <a href="mailto:<%= @farm.user.email %>" target="_blank"><%=@farm.user.email %></a></strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <b>Certification:</b>
-  <%= @farm.certification %>
-</p>
+    <div class="bottom-nav">
+      <div class="row-fluid">
+        <div class="span3">
+          <%= link_to "Take me back to the map", root_path(:anchor => 'footer'), :class => "btn btn-success"%>
+          <% if current_user == @farm.user %>
+          <%= link_to "View All My Farms", farms_path, :class => "btn btn-info" %>
+        </div>
+        <div class="span3 offset6">
 
-<p>
-  <b>Number of shares:</b>
-  <%= @farm.number_of_shares %>
-</p>
-
-<p>
-  <b>Share price:</b>
-  <%= @farm.share_price %>
-</p>
-
-<p>
-  <b>Farm description:</b>
-  <%= @farm.farm_description %>
-</p>
-
-
-<%= link_to 'Edit', edit_farm_path(@farm) %> |
-<%= link_to 'Back', farms_path %>
+          <%= link_to "Edit This Farm", edit_farm_path(@farm), :class => "btn btn-warning" %>
+      
+          <%= link_to "Delete This Farm", farm_path(@farm), method: :delete, :class => "btn btn-danger" %>
+        </div>
+           <% end %>
+      </div>
+    </div>

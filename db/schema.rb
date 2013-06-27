@@ -11,27 +11,46 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130615033709) do
+ActiveRecord::Schema.define(:version => 20130625222707) do
 
   create_table "farms", :force => true do |t|
     t.string   "name",              :null => false
+    t.string   "address",           :null => false
     t.string   "city",              :null => false
-    t.integer  "number_of_shares",  :null => false
+    t.string   "number_of_shares",  :null => false
     t.text     "share_description", :null => false
     t.text     "farm_description",  :null => false
+    t.string   "state",             :null => false
+    t.string   "phone_number"
+    t.integer  "user_id",           :null => false
+    t.string   "certification",     :null => false
+    t.string   "share_price",       :null => false
+    t.string   "website"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-    t.string   "address",           :null => false
-    t.string   "certification",     :null => false
-    t.integer  "share_price",       :null => false
-    t.string   "phone_number"
-    t.string   "state",             :null => false
-    t.integer  "user_id"
+    t.string   "country",           :null => false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.string   "image"
   end
 
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 8
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",     :null => false
+    t.string   "encrypted_password",     :default => "",     :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -40,8 +59,9 @@ ActiveRecord::Schema.define(:version => 20130615033709) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "role",                   :default => "user"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
