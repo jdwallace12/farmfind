@@ -1,10 +1,22 @@
+<% if @farms.empty?%>
+<div class="no-farms">
+  <div class="span6 offset3">
+    <h1>You Have No Farms Yet</h1>
+    <%= link_to "Create A Farm", new_farm_path, :class => "btn btn-large btn-success" %>
+    <%= link_to "Take me back to the map", root_path, :class => "btn btn-large btn-info" %>
+    
+  </div>
+</div>
+<% end %>
+<% unless @farms.empty?%>
 <div class="profile-heading">
   <div class="row-fluid">
     <div class="span6 offset3">
-      <h1>Farms you currently have</h1>
+      <h1>Current Farms</h1>
     </div>
   </div>
 </div>
+<% end %>
 <div class="farm-profile-list">
   <% @farms.each do |farm| %>
   <div class="profiles">
@@ -19,8 +31,8 @@
           <div class="buttons-list">
             <%= link_to "View This Farm", farm_path(farm), :class => "btn btn-large btn-info" %>
             <div class="danger-buttons">
-            <%= link_to "Edit This Farm", edit_farm_path(farm), :class => "btn btn-small btn-warning" %>
-            <%= link_to "Delete This Farm", farm_path(farm), method: :delete, :class => "btn btn-small btn-danger" %>
+              <%= link_to "Edit This Farm", edit_farm_path(farm), :class => "btn btn-warning" %>
+              <%= link_to "Delete This Farm", farm_path(farm), method: :delete, :class => "btn btn-danger" %>
             </div>
           </div>
         </div>
@@ -29,10 +41,13 @@
   </div>
 </div>
 <% end %>
+<% unless @farms.empty?%>
 <div class="back-home">
   <div class="row-fluid">
     <div class="span4 offset8">
-      <%= link_to "I am done, take me back", root_path, :class => "btn btn-large btn-success" %>
+      <%= link_to "Take me back to the map", root_path(:anchor => 'footer'), :class => "btn btn-large btn-info"%>
+      <%= link_to "Create A Farm", new_farm_path, :class => "btn btn-large btn-success" %>
     </div>
   </div>
 </div>
+<% end %>

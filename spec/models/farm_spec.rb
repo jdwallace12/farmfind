@@ -1,6 +1,9 @@
 describe Farm do
   let(:farm) { FactoryGirl.create(:farm) }
 
+  it { should belong_to(:user) }
+
+
   it "is valid" do
     expect(farm).to be_valid
   end
@@ -44,6 +47,12 @@ describe Farm do
     farm.state = nil
     expect(farm).to_not be_valid
     expect(farm.errors[:state]).to_not be_empty
+  end
+
+  it "is not valid without country" do
+    farm.country = nil
+    expect(farm).to_not be_valid
+    expect(farm.errors[:country]).to_not be_empty
   end
 
   it "is not valid without a number of shares" do
