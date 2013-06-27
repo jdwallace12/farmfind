@@ -46,6 +46,7 @@
 </div>
 </div>
 <div class="map">
+
  <div class="row-fluid">
   <div class="span12">
     <%= gmaps4rails(@json) %>
@@ -55,11 +56,12 @@
 <div class="row-fluid">
   <div class="footer-bar">
   </div>
-  <div class="footer">
+  <div id="footer">
    <div class="row-fluid">
     <div class="span6">
      <div class="left">
        <h3>
+
         Calling All Farmers 
       </h3>
       <% if user_signed_in? %>

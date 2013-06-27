@@ -4,6 +4,7 @@
     <h1>You Have No Farms Yet</h1>
     <%= link_to "Create A Farm", new_farm_path, :class => "btn btn-large btn-success" %>
     <%= link_to "Take me back to the map", root_path, :class => "btn btn-large btn-info" %>
+    
   </div>
 </div>
 <% end %>
@@ -44,7 +45,7 @@
 <div class="back-home">
   <div class="row-fluid">
     <div class="span4 offset8">
-      <%= link_to "Back to the map", root_path, :class => "btn btn-large btn-info" %>
+      <%= link_to "Take me back to the map", root_path(:anchor => 'footer'), :class => "btn btn-large btn-info"%>
       <%= link_to "Create A Farm", new_farm_path, :class => "btn btn-large btn-success" %>
     </div>
   </div>

@@ -102,7 +102,7 @@
     <div class="bottom-nav">
       <div class="row-fluid">
         <div class="span3">
-          <%= link_to "I am Done", root_path, :class => "btn btn-success" %>
+          <%= link_to "Take me back to the map", root_path(:anchor => 'footer'), :class => "btn btn-success"%>
           <% if current_user == @farm.user %>
           <%= link_to "View All My Farms", farms_path, :class => "btn btn-info" %>
         </div>
