@@ -39,6 +39,7 @@ class Farm < ActiveRecord::Base
      <img src=\"#{self.image.profile}\">
     <h6>Location:</h6> 
     <h5>#{self.city}, #{self.state}</h5> 
+    <a href=\"farms/#{self.id}\"><h6>Visit the farm profile page</h6></a>
     <hr>
     <h6>Website:</h6>
     <a href=\"http://#{self.website}\" target=_blank> #{self.website} </a>

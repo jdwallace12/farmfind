@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe User do
   let(:user) {FactoryGirl.build(:user)}
+  
+  it { should have_many(:farms).dependent(:destroy) }
+
   it "should be valid" do
     expect(user).to be_valid
   end

@@ -6,9 +6,10 @@
     <p>Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to "Edit Profile", edit_user_registration_path %> | 
       <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
-      <%= link_to "Submit a Farm", new_farm_path %> |
+      <%= link_to "Submit a Farm", new_farm_path %>
+      <% unless current_user.farms.empty?%> |
       <%= link_to "View Your #{'Farm'.pluralize current_user.farms.count}", farms_path %>
-
+      <% end %>
     </div>
     <% else %>
     <div class="span2 offset10">
@@ -27,14 +28,16 @@
         Welcome to Farm Finder
         <br>
       </h1>
-      <p class="lead">
-        Want fresh food? Find a local farm CSA near you.
-        <br>
-        Let the world know about your farm.  Share your information about your csa share.
-        <br>
-        <br>
-        <br>
-      </p>
+      <div class="callout">
+        <p class="lead">
+          Want fresh food? Find a local farm CSA near you.
+          <br>
+          Let the world know about your farm.  Share your information about your csa share.
+          <br>
+          <br>
+          <br>
+        </p>
+      </div>
       <div class="span3 offset4 " class="text-center">
         <button class="btn btn-large btn-success" id="searchfarm" >Search Farms</button>
       </div>
@@ -43,6 +46,7 @@
 </div>
 </div>
 <div class="map">
+
  <div class="row-fluid">
   <div class="span12">
     <%= gmaps4rails(@json) %>
@@ -52,16 +56,19 @@
 <div class="row-fluid">
   <div class="footer-bar">
   </div>
-  <div class="footer">
+  <div id="footer">
    <div class="row-fluid">
     <div class="span6">
      <div class="left">
        <h3>
+
         Calling All Farmers 
       </h3>
       <% if user_signed_in? %>
       <%= link_to "Add Your Farm", new_farm_path, :class => "btn btn-large btn-success" %>
+      <% unless current_user.farms.empty?%>
       <%= link_to "View Your #{'Farm'.pluralize current_user.farms.count}", farms_path, :class => "btn btn-large btn-warning" %>
+      <% end %>
       <% else %>
       <%= link_to "Signup", new_user_registration_path, :class => "btn btn-large btn-info" %>
       <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large" %>
