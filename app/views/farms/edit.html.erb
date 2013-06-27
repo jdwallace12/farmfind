@@ -1,4 +1,6 @@
 <div class="new-farm-form">
-<h1>Edit Your Farm Information</h1>
+<h1>Edit Your Farm Information<%= link_to "Nevermind, looks good", farm_path(@farm), :class => "btn btn-success" %>
+<%= link_to "Take me back to the map", root_path(:anchor => 'footer'), :class => "btn btn-info"%>
+</h1>
 <%= render 'form' %>
 </div>

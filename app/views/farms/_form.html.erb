@@ -20,13 +20,15 @@
     <%= f.input :number_of_shares, as: :string, label: 'How many shares do you offer?' %>
     <%= f.input :share_price, as: :string, label: 'How much does a share cost? in $US ' %>
     <%= f.input :share_description, label: 'Give a description of what is included in the share' %>
-    <label>Upload a photo of your farm</label>
+    <div class="current-image">
+    <label>Your Current Farm Photo:</label>
+        <%= image_tag @farm.image_url(:thumb).to_s %>
+    </div>
+    <label>Upload a new photo or change the existing one:</label>
     <div id="image_preview"></div>
     <%= f.input :image, label: false, input_html: {id: 'hellofarm'} %>
     <%= f.button :submit %>
-    <br>
     <% end %>
-    <br>
     </div>
   </div>
 </div>
