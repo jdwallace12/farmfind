@@ -86,12 +86,12 @@
               <hr>
               <li>
                 <p>Website Address:</p>
-                <strong> <%= @farm.website %> </strong>
+                <strong> <a href="http://<%= @farm.website %>" target="_blank"> <%=@farm.website%> </a></strong>
               </li>
               <hr>
               <li>
                 <p>Email:</p>
-                <strong> <%= @farm.user.email %> </strong>
+                <strong> <a href="mailto:<%= @farm.user.email %>" target="_blank"><%=@farm.user.email %></a></strong>
               </li>
             </ul>
           </div>
