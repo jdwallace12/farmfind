@@ -81,10 +81,15 @@
   <div class="span3">
       <%= simple_form_for @search, url: root_path do |f| %>
         <%= f.label :certification_cont, "Filter by Certification" %>
-        <%= f.select :certification_cont, ["","organic", "conventional", "none"] %>
+     <!--  <div class="btn-group" data-toggle="buttons-radio">
+        <button type="button" class="btn btn-primary">Organic</button>
+        <button type="button" class="btn btn-primary">Conventional</button>
+        <button type="button" data-toggle="button" class="btn btn-primary">None</button> -->
+      <!-- </div> -->
+       <%= f.select :certification_cont, ["","organic", "conventional", "none"] %>  
       </div>
     <div class="span3">
-        <%= f.label :name_cont, "Search by farm name" %>
+        <%= f.label :name_cont, "Find a farm by name" %>
         <%= f.input :name_cont, label: false %>
         <%= f.submit "Filter Results", :class => "btn btn-success" %>
       <% end %>
