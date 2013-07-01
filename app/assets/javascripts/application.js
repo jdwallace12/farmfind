@@ -22,6 +22,11 @@ $(function() {
   $("#searchfarm").click(function() {
     $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     return false;
+
+  $("button").click(function () {
+    $(this).toggleClass("active");
+});
+
   });
 
 } );
