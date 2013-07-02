@@ -79,39 +79,34 @@
     </div>
   </div>
   <div class="span2">
-      <%= simple_form_for @search, url: root_path do |f| %>
-        <%= f.label :certification_cont, "Filter by Certification" %>
-        <%= f.select :certification_cont, ["","organic", "conventional", "none"] %> 
-</div>
-<div class="span2">
-        <%= f.label :share_price_lteq, "I am willing to spend US$" %>
-        <%= f.select :share_price_lteq, ["","100", "200", "300", "400", "500", "600", "700", "800", "900"] %> 
-      </div>
-    <div class="span3">
-        <%= f.label :name_cont, "Find a farm by name" %>
-        <%= f.input :name_cont, label: false %>
-        <%= f.submit "Filter Results", :class => "btn btn-success" %>
-      <% end %>
+    <%= simple_form_for @search, url: root_path do |f| %>
+    <%= f.label :certification_cont, "Filter by Certification" %>
+    <%= f.select :certification_cont, ["","organic", "conventional", "none"] %> 
+  </div>
+  <div class="span2">
+    <%= f.label :share_price_lteq, "Spending Limit US$" %>
+    <%= f.select :share_price_lteq, ["","100", "200", "300", "400", "500", "600", "700", "800", "900"] %> 
+  </div>
+  <div class="span3">
+    <%= f.label :name_cont, "Find a farm by name" %>
+    <%= f.input :name_cont, label: false %>
+
   </div>
   <div class="span2">
     <div class="right">
-      <h3>
-        About
-      </h3>
-      <p>
-        Farmfinder helps connect the public with local farmers.  Find a farm near you.
-      </p>
-    </div>
-  </div>
+      <%= f.submit "Filter Results", :class => "btn btn-large btn-success" %>
+     <% end %>
+   </div>
+ </div>
 </div>
 </div>
 </div> 
 <% if search_performed? %>
 
-  <script>
-    $(function(){
-      window.location = window.location.href + "#footer";
-    });
-    
-  </script>
+<script>
+$(function(){
+  window.location = window.location.href + "#footer";
+});
+
+</script>
 <% end %>
