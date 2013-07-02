@@ -78,15 +78,14 @@
       </p>
     </div>
   </div>
-  <div class="span3">
+  <div class="span2">
       <%= simple_form_for @search, url: root_path do |f| %>
         <%= f.label :certification_cont, "Filter by Certification" %>
-     <!--  <div class="btn-group" data-toggle="buttons-radio">
-        <button type="button" class="btn btn-primary">Organic</button>
-        <button type="button" class="btn btn-primary">Conventional</button>
-        <button type="button" data-toggle="button" class="btn btn-primary">None</button> -->
-      <!-- </div> -->
-       <%= f.select :certification_cont, ["","organic", "conventional", "none"] %>  
+        <%= f.select :certification_cont, ["","organic", "conventional", "none"] %> 
+</div>
+<div class="span2">
+        <%= f.label :share_price_lteq, "I am willing to spend US$" %>
+        <%= f.select :share_price_lteq, ["","100", "200", "300", "400", "500", "600", "700", "800", "900", "1000", "1100", "1200", "1300", "1400", "1500"] %> 
       </div>
     <div class="span3">
         <%= f.label :name_cont, "Find a farm by name" %>
@@ -94,7 +93,7 @@
         <%= f.submit "Filter Results", :class => "btn btn-success" %>
       <% end %>
   </div>
-  <div class="span3">
+  <div class="span2">
     <div class="right">
       <h3>
         About
