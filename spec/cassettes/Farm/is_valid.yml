@@ -1,0 +1,146 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=15%20Hilltop%20Road,%20Sudbury,%20MA,%20United%20States&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 02 Jul 2013 20:16:07 GMT
+      Expires:
+      - Wed, 03 Jul 2013 20:16:07 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{\n   \"results\" : [\n      {\n         \"address_components\" :
+        [\n            {\n               \"long_name\" : \"15\",\n               \"short_name\"
+        : \"15\",\n               \"types\" : [ \"street_number\" ]\n            },\n
+        \           {\n               \"long_name\" : \"Hilltop Road\",\n               \"short_name\"
+        : \"Hilltop Rd\",\n               \"types\" : [ \"route\" ]\n            },\n
+        \           {\n               \"long_name\" : \"Sudbury\",\n               \"short_name\"
+        : \"Sudbury\",\n               \"types\" : [ \"locality\", \"political\" ]\n
+        \           },\n            {\n               \"long_name\" : \"Middlesex\",\n
+        \              \"short_name\" : \"Middlesex\",\n               \"types\" :
+        [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
+        \              \"long_name\" : \"Massachusetts\",\n               \"short_name\"
+        : \"MA\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
+        ]\n            },\n            {\n               \"long_name\" : \"United
+        States\",\n               \"short_name\" : \"US\",\n               \"types\"
+        : [ \"country\", \"political\" ]\n            },\n            {\n               \"long_name\"
+        : \"01776\",\n               \"short_name\" : \"01776\",\n               \"types\"
+        : [ \"postal_code\" ]\n            }\n         ],\n         \"formatted_address\"
+        : \"15 Hilltop Road, Sudbury, MA 01776, USA\",\n         \"geometry\" : {\n
+        \           \"location\" : {\n               \"lat\" : 42.3965820,\n               \"lng\"
+        : -71.4121110\n            },\n            \"location_type\" : \"ROOFTOP\",\n
+        \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+        : 42.39793098029151,\n                  \"lng\" : -71.41076201970850\n               },\n
+        \              \"southwest\" : {\n                  \"lat\" : 42.39523301970851,\n
+        \                 \"lng\" : -71.41345998029151\n               }\n            }\n
+        \        },\n         \"types\" : [ \"street_address\" ]\n      }\n   ],\n
+        \  \"status\" : \"OK\"\n}\n"
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 20:16:14 GMT
+- request:
+    method: get
+    uri: http://dev.virtualearth.net/REST/v1/Locations?key=AvmFKtn3n3L5knhkJV4iLtOq9DdgUjFKNHqIw31OWLPlroK6yhqZMg9E_VDQo9wi&query=15%20Hilltop%20Road,%20Sudbury,%20MA,%20United%20States
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        YXBwbGljYXRpb24vanNvbg==
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5n
+      !binary "U2VydmVy":
+      - !binary |-
+        TWljcm9zb2Z0LUlJUy84LjA=
+      !binary "WC1CbS1UcmFjZWlk":
+      - !binary |-
+        MTcwOWVhMDM3NDk1NDI1NjkzNTNjN2YyZmMwYjk2YTc=
+      !binary "WC1CbS1TcnY=":
+      - !binary |-
+        RVdSTTAwMzMxMywgRVdSTVNOVk0wMDE4MDMsIEVXUklQRVZNMDAwMjM0LCBF
+        V1JJUEVWTTAwMDIzNg==
+      !binary "WC1Ncy1CbS1Xcy1JbmZv":
+      - !binary |-
+        MA==
+      !binary "WC1Bc3BuZXQtVmVyc2lvbg==":
+      - !binary |-
+        NC4wLjMwMzE5
+      !binary "WC1Qb3dlcmVkLUJ5":
+      - !binary |-
+        QVNQLk5FVA==
+      !binary "RGF0ZQ==":
+      - !binary |-
+        VHVlLCAwMiBKdWwgMjAxMyAyMDoxNjowNiBHTVQ=
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEAKRT227jNhD9FYLPqkxRd7+5SbAJNt4NnOz2oV4ENEVbBChS
+        ICk7QjYf1N/ol3Uo2W2xiwIBCsOAOHPmds7MK2aDb4X2kjMvjd4INyh/ZRqB
+        l/grU7K5sqIJfqYcjvDOMt3cm4P5YiUgWu/75XaxXTTiGB+l9QNTglnfxlr4
+        7eLXgJb6sF0oCHnuzUlAtufdGPf6ANm46UcrD62HVFeXb/TnH4iSJEVrya1x
+        Zu8RZEHSO+SGvldSWBejlVJogjtkhRP2KJoYPbXSodXDHeJMa+PRTiDGuXBO
+        NFMOmBRxoz3MM72ZHkM0TOxQx0Z0jhkAH4Gjt6YZOMQaizyM4jrpPTylniI7
+        KCIsOknfmsEj8dJDLodONqA06oXtpHNAKtpb0/1rnCtje2MnvmNgAaLMYLl4
+        FN7h5e+vWDgvOwaVnoxnCi+TfzAz4PnZj31Q6N7Msi3/FsLxVnTMxd2lWsxN
+        B2ZQhbdBB87UdnFy2wWkBImOSVB1Z14gcUbjtKZlUhKaVQWpKY1+KZM4S2pS
+        0brMU/hFAMoIyTKaFYQQSstsBpE8SfOyzIqsyL9FWLMuNJjk6FYq5U2PNsDp
+        49DsBjtGaL1CJCnLAor3RmpYgFd8nulheoflMBaWB3hwl96KvKxLqJwmxbkz
+        mpA6LfNvbxFmTRP4D5nOn/dS/9QDDsBO6mvpvJU8bN569aORBqtsGgWb9QJy
+        xVM7g/Z23IgD8A3+L1qGXXj0U4MR3hsLmoFpdenjPcNPekg/AvrsnhhxoPv5
+        CGfkW2hA7yWcIg/WW1h9QIbD9OPTTNylcIQPwnCInpicN+b/cAtwpvigpk1b
+        C9j2JqSChRIKcg2OHURoIaTCQGGv2IhBkXdVrWlRlXVV0epSNU3ytKiKnKb/
+        UfkODhgOaLb+1MAGblFAeQgGPXgbaJwcHwxEgz14gF8/uJlhSsjFcC0ct7L3
+        s8KfP0JyuHsu7kJZOItaMJKWWZ1nNC9qOAde7umek11dsPL7zW+bNSFpmqTf
+        CY0JiZMc/ikhk+fx01fwJhVJIwTvu4eb8CY0zX54F/jtrwEAC6w7TZYFAAA=
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 20:16:14 GMT
+recorded_with: VCR 2.5.0

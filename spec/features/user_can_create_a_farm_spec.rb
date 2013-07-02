@@ -5,13 +5,13 @@ require "spec_helper"
     let(:user) { FactoryGirl.create(:user) }
     let(:farm) { FactoryGirl.create(:farm, user: user) }
 
-    scenario "user can create farm" do
+    scenario "user can create farm", :vcr do
       sign_in_as user
       create_farm
       expect(user.farms.count).to eql(1)
     end
 
-    scenario "user can create multiple farms" do
+    scenario "user can create multiple farms", :vcr do
       farm
       sign_in_as user
       create_farm
