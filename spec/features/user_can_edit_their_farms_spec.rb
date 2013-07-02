@@ -1,6 +1,6 @@
 require "spec_helper"
 
-  feature "user can edit their farm" do
+  feature "user can edit their farm", :vcr do
     let(:user) { FactoryGirl.create(:user) }
     let(:farm) { FactoryGirl.create(:farm, user: user) }
 
