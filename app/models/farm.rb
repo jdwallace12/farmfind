@@ -65,8 +65,8 @@ class Farm < ActiveRecord::Base
 
   def gmaps4rails_marker_picture
     {
-      "picture" =>"http://johnwallacedesigns.com/wp-content/uploads/2013/06/farm-2.png" ,
-       "width" => 37 , 
+      "picture" =>"http://johnwallacedesigns.com/wp-content/uploads/2013/06/farm-2.png",
+       "width" => 37, 
        "height" => 37,
     }
   end

@@ -10,7 +10,7 @@ class FarmsController < ApplicationController
   def show
     @farm = Farm.find(params[:id])
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @farm }
     end
   end
@@ -18,14 +18,13 @@ class FarmsController < ApplicationController
   def new
     @farm = Farm.new
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @farm }
     end
   end
 
   def edit
     @farm = Farm.find(params[:id])
-    #need to redirect if farm user does not = current_user
     unless @farm.user == current_user
       redirect_to root_path, :flash => { error: "You can't edit farms that don't belong to you." }
     end
