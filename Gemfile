@@ -19,6 +19,7 @@ gem 'simple_form_fancy_uploads'
 gem 'simple_form', '2.0.0'
 gem 'ransack'
 
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
@@ -27,6 +28,8 @@ group :test, :development do
   gem 'pry-rails'
   gem "shoulda-matchers"
   gem 'dotenv-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 # Gems used only for assets and not required

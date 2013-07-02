@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=15%20Hilltop%20Road,%20Sudbury,%20MA,%20United%20States&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 02 Jul 2013 20:16:06 GMT
+      Expires:
+      - Wed, 03 Jul 2013 20:16:06 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: US-ASCII
+      string: ! "{\n   \"results\" : [\n      {\n         \"address_components\" :
+        [\n            {\n               \"long_name\" : \"15\",\n               \"short_name\"
+        : \"15\",\n               \"types\" : [ \"street_number\" ]\n            },\n
+        \           {\n               \"long_name\" : \"Hilltop Road\",\n               \"short_name\"
+        : \"Hilltop Rd\",\n               \"types\" : [ \"route\" ]\n            },\n
+        \           {\n               \"long_name\" : \"Sudbury\",\n               \"short_name\"
+        : \"Sudbury\",\n               \"types\" : [ \"locality\", \"political\" ]\n
+        \           },\n            {\n               \"long_name\" : \"Middlesex\",\n
+        \              \"short_name\" : \"Middlesex\",\n               \"types\" :
+        [ \"administrative_area_level_2\", \"political\" ]\n            },\n            {\n
+        \              \"long_name\" : \"Massachusetts\",\n               \"short_name\"
+        : \"MA\",\n               \"types\" : [ \"administrative_area_level_1\", \"political\"
+        ]\n            },\n            {\n               \"long_name\" : \"United
+        States\",\n               \"short_name\" : \"US\",\n               \"types\"
+        : [ \"country\", \"political\" ]\n            },\n            {\n               \"long_name\"
+        : \"01776\",\n               \"short_name\" : \"01776\",\n               \"types\"
+        : [ \"postal_code\" ]\n            }\n         ],\n         \"formatted_address\"
+        : \"15 Hilltop Road, Sudbury, MA 01776, USA\",\n         \"geometry\" : {\n
+        \           \"location\" : {\n               \"lat\" : 42.3965820,\n               \"lng\"
+        : -71.4121110\n            },\n            \"location_type\" : \"ROOFTOP\",\n
+        \           \"viewport\" : {\n               \"northeast\" : {\n                  \"lat\"
+        : 42.39793098029151,\n                  \"lng\" : -71.41076201970850\n               },\n
+        \              \"southwest\" : {\n                  \"lat\" : 42.39523301970851,\n
+        \                 \"lng\" : -71.41345998029151\n               }\n            }\n
+        \        },\n         \"types\" : [ \"street_address\" ]\n      }\n   ],\n
+        \  \"status\" : \"OK\"\n}\n"
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 20:16:13 GMT
+- request:
+    method: get
+    uri: http://dev.virtualearth.net/REST/v1/Locations?key=AvmFKtn3n3L5knhkJV4iLtOq9DdgUjFKNHqIw31OWLPlroK6yhqZMg9E_VDQo9wi&query=15%20Hilltop%20Road,%20Sudbury,%20MA,%20United%20States
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json
+      Content-Encoding:
+      - gzip
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/8.0
+      X-Bm-Traceid:
+      - 6c902f26a41945bab3363fc732bd1590
+      X-Bm-Srv:
+      - EWRM001665, EWRMSNVM002560, EWRIPEVM000242, EWRIPEVM000250
+      X-Ms-Bm-Ws-Info:
+      - '0'
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Tue, 02 Jul 2013 20:16:06 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAEAKRT227bOBD9FYLPWpmibpbfvEnQGI3bwEm7D+sioCnaIkCR
+        AknZEdJ80P7GftkOJXt326JAgMIwIM6cuZ0z84JZ7xuhveTMS6M3wvXKX5la
+        4AX+zJSsr6yog58phyO8s0zXd+ZgPlkJiMb7brGdbWe1OMZHaX3PlGDWN7EW
+        fjv7PaClPmxnCkKeOnMSkO1pN8SdPkA2brrBykPjIdXV5Rv9/ReiJEnRWnJr
+        nNl7BFmQ9A65vuuUFNbFaKkUGuEOWeGEPYo6Ro+NdGh5v0KcaW082gnEOBfO
+        iXrMAZMibrSHecY300OIhokdatmAzjE94CNwdNbUPYdYY5GHUVwrvYen1GNk
+        C0WERSfpG9N7JJ47yOXQyQaURp2wrXQOSEV7a9r/jXNlbGfsyHcMLECU6S0X
+        D8I7vPjzBQvnZcug0qPxTOFF8h9mAjw9+aELCt2ZSbbFv0I43oiWubi9VIu5
+        acEMqvAm6MCZ2s5ObjuDlCDRMQmq7swzJM5onFa0TEpCs3lBKkqj38okzpKK
+        zGlV5in8IgBlhGQZzQpCCKVlNoFInqR5WWZFVuRfIqxZGxpMcnQrlfKmQxvg
+        9KGvd70dIrReIpKUZQHFOyM1LMALPs90P77DchgLywM8uEtvRV5WJVROk+Lc
+        GU1IlZb5l9cIs7oO/IdM5887qX/oAQdgK/W1dN5KHjZvvfzeSINV1rWCzXoG
+        ueKxnV57O2zEAfgG/yctwy48+LHBCO+NBc3AtLz08ZbhRz2kHwB9do+MOND9
+        fIQT8jU0oPcSTpEH6y2sPiDDYfrhcSLuUjjCB2E4RI9MThvzK9wCnCneq3HT
+        1gK2vQ6pYKGEgly9YwcRWgipMFDYKTZgUORNVStazMtqPqfzS9U0ydNiXuQ0
+        /UnlFRwwHNBk/aGBDdyigPIQDHrwJtA4Ot4ZiAZ78AC/vncTw5SQi+FaOG5l
+        5yeFP76H5HD3XKxC2YJXhO5pweAesnzHdmlapHtepnRXJ3lFvt78sVkTkhRF
+        /pXQmJA4yeGfksnz8OEzeGlekAjBe3V/E95wafTbd07w6z8DABky/bmWBQAA
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 20:16:13 GMT
+recorded_with: VCR 2.5.0

@@ -1,4 +1,6 @@
-describe Farm do
+require 'spec_helper'
+
+describe Farm, :vcr do
   let(:farm) { FactoryGirl.create(:farm) }
 
   it { should belong_to(:user) }

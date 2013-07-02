@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-  describe "user edits a farm" do
+  describe "user edits a farm", :vcr do
     let(:user) { FactoryGirl.create(:user) }
     let(:farm) { FactoryGirl.create(:farm, user: user) }
     let(:other_farm) { FactoryGirl.create(:farm) }

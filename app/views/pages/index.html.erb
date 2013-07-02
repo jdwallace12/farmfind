@@ -85,7 +85,7 @@
   </div>
   <div class="span2">
     <%= f.label :share_price_lteq, "Spending Limit US$" %>
-    <%= f.select :share_price_lteq, (0..2000).step(50) %> 
+    <%= f.select :share_price_lteq, (0..2000).step(50).unshift("") %> 
   </div>
   <div class="span3">
     <%= f.label :name_cont, "Find a farm by name" %>
