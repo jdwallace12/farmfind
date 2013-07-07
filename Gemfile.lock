@@ -75,6 +75,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faker (1.1.2)
+      i18n (~> 0.5)
     font-awesome-rails (3.2.1.1)
       railties (>= 3.2, < 5.0)
     geocoder (1.1.8)
@@ -113,6 +115,7 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
+    populator (1.0.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -231,12 +234,15 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  faker
   geocoder
   gmaps4rails
   jquery-rails
   launchy
   meyer-css-reset-rails (~> 1.0.2)
+  nokogiri
   pg
+  populator
   pry-rails
   rails (= 3.2.13)
   rails_admin
