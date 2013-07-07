@@ -39,7 +39,7 @@
         </p>
       </div>
       <div class="span3 offset4 " class="text-center">
-        <button class="btn btn-large btn-success" id="searchfarm" >Search Farms</button>
+        <button class="btn btn-large btn-success" id="searchfarm"><i class="icon-search icon-white"></i>Search Farms</button>
       </div>
     </div>
   </div>
@@ -65,9 +65,10 @@
         Calling All Farmers 
       </h3>
       <% if user_signed_in? %>
-      <%= link_to "Add Your Farm", new_farm_path, :class => "btn btn-large btn-success" %>
+      <%= link_to "<i class=\"icon-plus icon-white\"></i>Add Your Farm".html_safe, new_farm_path, :class => "btn btn-large btn-success" %>
       <% unless current_user.farms.empty?%>
-      <%= link_to "View Your #{'Farm'.pluralize current_user.farms.count}", farms_path, :class => "btn btn-large btn-warning" %>
+      <%= link_to "<i class=\"icon-wrench icon-white\"></i>Your #{'Farm'.pluralize current_user.farms.count}".html_safe, farms_path, :class => "btn btn-large btn-warning" %>
+      
       <% end %>
       <% else %>
       <%= link_to "Signup", new_user_registration_path, :class => "btn btn-large btn-info" %>
