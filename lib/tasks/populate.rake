@@ -3,20 +3,45 @@ namespace :db do
   task :populate => :environment do
     require 'populator'
     require 'faker'
-   
-      Farm.populate 1 do |farm|
 
-        farm.name = Populator.words(1..3).titleize
-        farm.farm_description = Populator.sentences(2..10)
-        farm.certification = ["organic", "conventional", "none"]
+    user = User.last
+
+
+    
+    def fruits
+      %w{banana orange strawberry melon lettuce carrot onion garlic chive}
+    end
+
+    def adjectives
+      %w{happy fun party shady sunny foggy misty sleepy mossy sticky round square}
+    end
+    
+    def certification
+      %w{organic none conventional}.sample
+    end    
+
+    def random_farm
+      adjectives.sample.titleize + " " + fruits.sample.titleize + " Farm" 
+    end
+
+      200.times do
+        farm = Farm.new
+      
+        farm.user = user
+
+        farm.name = random_farm
+        farm.farm_description = Faker::Lorem.sentences(2..10)
+        farm.certification = certification
         farm.phone_number  = Faker::PhoneNumber.phone_number
         farm.address = Faker::Address.street_address
         farm.city = Faker::Address.city
-        farm.state = Faker::Address.us_state_abbr
-        farm.number_of_shares = [30, 50, 80, 100, 150, 200, 250, 300]
-        farm.share_price = [300, 350, 400, 500, 550, 600, 650, 700, 750, 800, 850, 900, 1000, 1200]
-        farm.share_description = Populator.sentences(2..10)
+        farm.state = Faker::Address.state
+        farm.country = "United States"
+        farm.number_of_shares = rand(300)
+        farm.share_price = rand(2000)
+        farm.share_description = Faker::Lorem.sentences(2..10)
+        farm.save
       end
-   end
- end
+  end
+end
 
