@@ -14,6 +14,7 @@ Farmfinder is a two party marketplace application giving farmers the opportunity
 
 Farmers need to create an account in order to add a farm.  A user is allowed to add multiple farms.  The farm owner is directed to a form where they enter their information; they are also able to upload one photograph of their farm.  A farmer can edit their farms at any time by clicking "View your farm(s)" and clicking "Edit this farm".  Farmers can also delete farms.  All farms that belong to a user are deleted when a user deletes their account.
 
+
 Each farm has a farm profile page that is generated when they create a farm.  Only a signed in user may view the actual profile page.  All nonusers are able to see farm information by clicking on the marker on the map.
 
  
