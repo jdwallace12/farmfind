@@ -16,7 +16,7 @@ Farmers need to create an account in order to add a farm.  A user is allowed to 
 
  
 
- Each farm has a farm profile page that is generated when they create a farm.  Only a signed in user may view the actual profile page.  All nonusers are able to see farm information by clicking on the marker on the map.
+Each farm has a farm profile page that is generated when they create a farm.  Only a signed in user may view the actual profile page.  All nonusers are able to see farm information by clicking on the marker on the map.
 
  
 
