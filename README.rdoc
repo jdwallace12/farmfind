@@ -5,8 +5,8 @@ Most people know that being a farmer is an extremely busy profession—farmers h
 
 Farmfinder is a two party marketplace application giving farmers the opportunity to share information about their farm, CSA, and location with the public.  The farm locations are geocoded and placed on a map, allowing the general public to find farms in their region.  Users are able to filter the results on the map by price, certification, and name.
 
- 
- == Getting Started
+
+== Getting Started
 
 Farmers need to create an account in order to add a farm.  A user is allowed to add multiple farms.  The farm owner is directed to a form where they enter their information; they are also able to upload one photograph of their farm.  A farmer can edit their farms at any time by clicking "View your farm(s)" and clicking "Edit this farm".  Farmers can also delete farms.  All farms that belong to a user are deleted when a user deletes their account.
 
