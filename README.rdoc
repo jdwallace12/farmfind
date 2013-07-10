@@ -2,50 +2,40 @@
 
 Most people know that being a farmer is an extremely busy profession—farmers have an endless amount of tasks and duties in order to keep their farm functioning. However, one often forgets that a farm is also a business, and like all other businesses, they need marketing and publicity in order to be successful. As the “organic” and “slow-grow” movement continues to gain momentum, small farmers are struggling to advertise their Community Sustainable Agriculture (CSA) shares. At the same time, many consumers remain oblivious of the abundance of fresh produce available at nearby farms. The purpose of FarmFinder is to create a symbiotic relationship between the farmer and the consumer:  busy farmers can market their farms and CSA, while unaware consumers can easily find a wealth of information on all their local farms.  FarmFinder emphasizes the importance of small local farms and will increase public awareness of all the high quality produce available at your fingertips.
 
- 
 
 Farmfinder is a two party marketplace application giving farmers the opportunity to share information about their farm, CSA, and location with the public.  The farm locations are geocoded and placed on a map, allowing the general public to find farms in their region.  Users are able to filter the results on the map by price, certification, and name.
 
  
-
- 
-
-== Getting Started
+ == Getting Started
 
 Farmers need to create an account in order to add a farm.  A user is allowed to add multiple farms.  The farm owner is directed to a form where they enter their information; they are also able to upload one photograph of their farm.  A farmer can edit their farms at any time by clicking "View your farm(s)" and clicking "Edit this farm".  Farmers can also delete farms.  All farms that belong to a user are deleted when a user deletes their account.
 
- 
-
- Each farm has a farm profile page that is generated when they create a farm.  Only a signed in user may view the actual profile page.  All non-users are able to see farm information by clicking on the marker on the map.
+Each farm has a farm profile page that is generated when they create a farm.  Only a signed in user may view the actual profile page.  All nonusers are able to see farm information by clicking on the marker on the map.
 
  
 
 ==Under the Hood
 
- 
-
 *All user registrations are accomplished with the "Devise" gem.  It allowed me to quickly implement a user model with all the basic requirements I needed to have users sign-up, sign-in, logout, and delete their account.
 
  
-
 *"Gmaps4rails" gem was used to display geocoded locations using the Google Map API.  It gave the functionality of the map that I was looking for.
 
- 
 
 *"Geocoder" gem was used to geocode the locations of the farm and display a map on the farm profile pages.
 
  
-
 *"Simple form" gem was used for forms when a user creates and edits a farm.  "countryselect" gem was used in conjunction to allow users to select a different country.
 
  
-
 *"Carrierwave" gem was used to allow users to upload images of their farm. "rmagic" was also used to resize the photos to several different image sizes.
 
  
-
 *"Ransack" gem was used in the filtering of farms on the map.  It was used to filter by price, certification, and farm name.
 
  
-
 *"rails admin" and "cancan" gems were used to create a admin user for myself to moderate the entire site.  This gives me access to edit or delete any farms that post incorrect or offensive information.
+
+==Thanks
+
+I want to give a big thanks Jason Zopf for guiding me through rails and Sam McTaggart with helping with the sweet live image preview.
