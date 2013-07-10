@@ -49,5 +49,7 @@ Each farm has a farm profile page that is generated when they create a farm.  On
 
 *"rails admin" and "cancan" gems were used to create a admin user for myself to moderate the entire site.  This gives me access to edit or delete any farms that post incorrect or offensive information.
 
+
 ==Thanks
+
 I want to give a big thanks Jason Zopf for guiding me through rails and Sam McTaggart with helping with the sweet live image preview.
