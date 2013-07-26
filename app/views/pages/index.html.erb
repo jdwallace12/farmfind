@@ -63,6 +63,9 @@
     <% Farm.recent(3).each do |farm| %>
     <span><%= image_tag farm.image_url(:thumb).to_s %>
     <h5><%= farm.name %></h5></span>
+    <h6><%= farm.city %> ,
+        <%= farm.state %>
+    </h6>
   </br>
     <% end %>
 
