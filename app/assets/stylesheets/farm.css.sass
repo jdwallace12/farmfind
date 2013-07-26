@@ -278,19 +278,22 @@ input[type="submit"].btn.btn-large
   border-top: 1px solid #ccc
   border-bottom: 1px solid #ccc
   background-image: url("../debut_light.png")
-
+  
 .map a
   padding: 10px
 
 .map img
   width: 100%
 
+// .farm-header
+//   -webkit-box-shadow: 0 0 30px 5px rgba(36,37,34,0.4)
+
 .farm-info-wrap
   background-image: url("../squairy_light.png")
   -moz-box-shadow: 0 0 30px 5px rgba(36, 37, 34, 0.4)
   -webkit-box-shadow: 0 0 30px 5px rgba(36, 37, 34, 0.4)
-  
 
+  
 .farm-info .span12 h5
   padding-left: 10px
 
@@ -319,6 +322,7 @@ input[type="submit"].btn.btn-large
   color: white
   font-size: 3.5em
   padding-top: 10px
+  text-shadow: 0px 1px 2px #000
 
 .farm-profile-list
   padding-top: 20px
@@ -326,11 +330,15 @@ input[type="submit"].btn.btn-large
 .profiles
   padding-top: 20px
 
+.profiles .span6:hover
+  -webkit-box-shadow: 0 0 30px 5px rgba(36,37,34,0.4)
+ 
 .profiles .span6
   border: 1px solid #C2C2C2
   background-image: url("../debut_light.png")
   -moz-box-shadow: 0 0 30px 5px rgba(36, 37, 34, 0.4)
   -webkit-box-shadow: 0 0 30px 5px rgba(36, 37, 34, 0.4)
+
 
 .farm-list-info
   padding-left: 10px
@@ -373,6 +381,90 @@ input[type="submit"].btn.btn-large
 #footer input[type="submit"].btn
   margin-top: 42px
   margin-right 1%
+
+.panel
+  position: absolute
+  top: 0
+  left: 0
+  display: none
+  background-image: url("../classy_fabric.png")
+  border: 1px solid #707070
+  -moz-border-radius-topright: 20px
+  -webkit-border-top-right-radius: 20px
+  -moz-border-radius-bottomright: 20px
+  -webkit-border-bottom-right-radius: 20px
+  width: 330px
+  height: auto
+  padding: 30px 30px 30px 130px
+
+.panel h5
+  margin: 0 0 15px 0
+  padding: 0
+  color: #cccccc
+
+.panel h3
+  color: #ccc
+
+.panel a, .panel a:visited
+  margin: 0
+  padding: 0
+  color: #9FC54E
+  text-decoration: none
+  border-bottom: 1px solid #9FC54E
+
+.panel a:hover, .panel a:visited:hover
+  margin: 0
+  padding: 0
+  color: #ffffff
+  text-decoration: none
+  border-bottom: 1px solid #ffffff
+
+a.trigger
+  position: absolute
+  text-decoration: none
+  top: 94%
+  left: 88.69%
+  font-size: 16px
+  letter-spacing: -1px
+  font-family: 'Open Sans'
+  color: #fff
+  padding: 10px 20px 10px 10px
+  font-weight: 700
+  background-color: #006ccc
+  border: 1px solid white
+  -moz-border-radius-topleft: 20px
+  -webkit-border-top-leftt-radius: 20px
+  -moz-border-radius-bottomleftt: 20px
+  -webkit-border-bottom-left-radius: 20px
+  -moz-border-radius-bottomleft: 0px
+  -webkit-border-bottom-left-radius: 0px
+  display: block
+  opacity: .45
+
+a.trigger:hover
+  position: absolute
+  text-decoration: none
+  top: 94%
+  left: 88.69%
+  font-size: 16px
+  letter-spacing: -1px
+  font-family: 'Open Sans'
+  color: #fff
+  padding: 10px 20px 10px 10px
+  font-weight: 700
+  background-color: #006ccc
+  border: 1px solid white
+  -moz-border-radius-topleftt: 20px
+  -webkit-border-top-leftt-radius: 20px
+  -moz-border-radius-bottomleft: 20px
+  -webkit-border-bottom-leftt-radius: 20px
+  -moz-border-radius-bottomleft: 0px
+  -webkit-border-bottom-left-radius: 0px
+  display: block
+  opacity: .6
+
+a.active.trigger 
+  background: #222222 url(images/minus.png) 85% 55% no-repeat
 
 
 @media (max-width: 600px)
