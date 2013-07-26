@@ -38,6 +38,7 @@
           <br>
         </p>
       </div>
+
       <div class="span3 offset4 " class="text-center">
         <button class="btn btn-large btn-success" id="searchfarm"><i class="icon-search icon-white"></i>Search Farms</button>
       </div>
@@ -55,6 +56,19 @@
 </div>
 <div class="row-fluid">
   <div class="footer-bar">
+    <div class="panel">
+    </br>
+  </br>
+    <h3>Recently Added Farms</h3>
+    <% Farm.recent(3).each do |farm| %>
+    <span><%= image_tag farm.image_url(:thumb).to_s %>
+    <h5><%= farm.name %></h5></span>
+  </br>
+    <% end %>
+
+  </div>
+  <a class="trigger" href="#">Recently Added Farms</a>
+
   </div>
   <div id="footer">
    <div class="row-fluid">
@@ -97,12 +111,13 @@
   <div class="span2">
     <div class="right">
       <%= f.submit "Filter Results", :class => "btn btn-primary" %>
-     <% end %>
-   </div>
- </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 </div>
 </div> 
+
 <% if search_performed? %>
 
 <script>
@@ -111,4 +126,6 @@ $(function(){
 });
 
 </script>
+
+
 <% end %>

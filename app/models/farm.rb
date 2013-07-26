@@ -71,4 +71,8 @@ class Farm < ActiveRecord::Base
        "height" => 37,
     }
   end
+
+  def self.recent(num)
+    order("created_at DESC").limit(num)
+  end
 end
