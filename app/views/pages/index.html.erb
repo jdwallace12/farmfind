@@ -101,6 +101,7 @@
     <%= simple_form_for @search, url: root_path do |f| %>
     <%= f.label :certification_cont, "Filter by Certification" %>
     <%= f.select :certification_cont, ["","organic", "conventional", "none"] %> 
+
   </div>
   <div class="span2">
     <%= f.label :share_price_lteq, "Spending Limit US$" %>
@@ -117,9 +118,20 @@
       <% end %>
     </div>
   </div>
+  <div class="row-fluid">
+      <ul class="footer-links">
+        <div class="span3 pull-right">
+  <li>About</li>
+  <li>Terms of Use</li>
+  <li>Feedback</li>
+</ul>
+</div>
+  </div>
+</div>
+
 </div>
 </div>
-</div> 
+
 
 <% if search_performed? %>
 
