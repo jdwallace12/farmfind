@@ -12,9 +12,13 @@ resources :farms
 
 resources :pages
 get "pages/index"
+get "pages/terms"
+get "pages/feedback"
 
+match '/terms' => 'pages#terms'
 match '/about' => 'pages#about'
-match ':permalink', :controller => 'pages', :action => 'show', :as => 'about'
+match '/feedback' => 'pages#feedback'
+
 root :to => 'pages#index'
 
 
