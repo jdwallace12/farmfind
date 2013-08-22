@@ -9,4 +9,13 @@ class PagesController < ApplicationController
   def search_performed?
     params[:q].present?
   end
+
+  def about
+  end
+
+  def feedback
+  end
+
+  def terms
+  end
 end
