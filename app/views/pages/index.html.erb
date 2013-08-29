@@ -71,7 +71,17 @@
 
   </div>
   <a class="trigger" href="#">Recently Added Farms</a>
-
+<div class="feature-panel">
+  <% Farm.recent(1).each do |farm| %>
+    <span><%= image_tag farm.image_url(:thumb).to_s %>
+    <h5><%= farm.name %></h5></span>
+    <h6><%= farm.city %> ,
+        <%= farm.state %>
+    </h6>
+  </br>
+    <% end %>
+  </div>
+  <a class="feature-trigger" href="#">Featured Farm</a> 
   </div>
   <div id="footer">
    <div class="row-fluid">

@@ -39,6 +39,25 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+  $(".feature-panel").hide()
+    $(".feature-trigger").click(function(){
+        $(".feature-panel").toggle("fast");
+     $(this).toggleClass(".feature-panel");
+        return false;
+    });
+});
 
 
 
+
+
+$(document).ready(function(){
+  $("#static-image, img").hide();
+    $("#static-image, img").fadeIn(2000);
+  });
+
+$(document).ready(function(){
+  $(".sign-in").hide();
+    $(".sign-in").fadeIn(2000);
+});
