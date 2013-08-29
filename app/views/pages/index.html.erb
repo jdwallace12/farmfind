@@ -75,11 +75,9 @@
     <div class="feature-content">
   <h3>Featured Farm</h3>  
   <% Farm.recent(1).each do |farm| %>
-    <span><%= image_tag farm.image_url(:thumb).to_s %>
-    <h5><%= farm.name %></h5></span>
-    <h6><%= farm.city %> ,
-        <%= farm.state %>
-    </h6>
+   <%= image_tag farm.image_url(:thumb).to_s %>
+    <h5>Your Name Here</h5>
+    <h6>Your City, State</h6>
   </br>
     <% end %>
   </div>
@@ -120,13 +118,15 @@
 
   </div>
   <div class="span2">
+
     <%= f.label :share_price_lteq, "Spending Limit US$" %>
     <%= f.select :share_price_lteq, (0..2000).step(50).unshift("") %> 
   </div>
   <div class="span2">
+    <div class="searchbar" data-provide="typeahead" autocomplete="off">
     <%= f.label :name_cont, "Find a farm by name" %>
     <%= f.input :name_cont, label: false %>
-
+</div>
   </div>
   <div class="span2">
     <div class="right">

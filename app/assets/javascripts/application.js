@@ -49,7 +49,6 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $("#static-image, img").hide();
-    $("#static-image, img").fadeIn(2000);
+  $("#static-image").hide();
+    $("#static-image").fadeIn(2000);
   });
-
