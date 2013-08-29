@@ -14,10 +14,12 @@ resources :pages
 get "pages/index"
 get "pages/terms"
 get "pages/feedback"
+get "pages/featured"
 
 match '/terms' => 'pages#terms'
 match '/about' => 'pages#about'
 match '/feedback' => 'pages#feedback'
+match '/featured' => 'pages#featured'
 
 root :to => 'pages#index'
 

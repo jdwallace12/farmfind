@@ -48,16 +48,8 @@ $(document).ready(function(){
     });
 });
 
-
-
-
-
 $(document).ready(function(){
   $("#static-image, img").hide();
     $("#static-image, img").fadeIn(2000);
   });
 
-$(document).ready(function(){
-  $(".sign-in").hide();
-    $(".sign-in").fadeIn(2000);
-});
