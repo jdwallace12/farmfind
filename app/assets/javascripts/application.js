@@ -52,3 +52,8 @@ $(document).ready(function(){
   $("#static-image").hide();
     $("#static-image").fadeIn(2000);
   });
+
+
+$(document).ready(function(){
+    $("a[rel=tooltip]").tooltip();
+});
