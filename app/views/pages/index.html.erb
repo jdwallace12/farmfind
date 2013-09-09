@@ -115,18 +115,18 @@
   </div>
   <div class="span2">
     <%= simple_form_for @search, url: root_path do |f| %>
-    <%= f.label :certification_cont, "Filter by Certification", :title => "Filter the map by certification type.  Such as organic or conventional", :rel => "tooltip", "data-placement" => 'top'  %>
+    <%= f.label :certification_cont, "Filter by Certification", :title => "Filter the map by certification type, such as organic or conventional", :rel => "tooltip", "data-placement" => 'top'  %>
     <%= f.select :certification_cont, ["","organic", "conventional", "none"] %> 
 
   </div>
   <div class="span2">
 
-    <%= f.label :share_price_lteq, "Spending Limit US$", :title => "Select the maximum amount you would like to spend.", :rel => "tooltip", "data-placement" => 'top' %>
+    <%= f.label :share_price_lteq, "Spending Limit US$", :title => "Select the maximum amount you would like to spend", :rel => "tooltip", "data-placement" => 'top' %>
     <%= f.select :share_price_lteq, (0..2000).step(50).unshift("") %> 
   </div>
   <div class="span2">
     <div class="searchbar" data-provide="typeahead" autocomplete="off">
-    <%= f.label :name_cont, "Find a farm by name", :title => "Search for the name of a farm.", :rel => "tooltip", "data-placement" => 'top' %>
+    <%= f.label :name_cont, "Search by name" %>
     <%= f.input :name_cont, label: false %>
 </div>
   </div>
