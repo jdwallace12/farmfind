@@ -57,3 +57,15 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("a[rel=tooltip]").tooltip();
 });
+
+$(document).ready(function(){
+    $("#new_q > label:nth-child(2)").tooltip();
+});
+
+$(document).ready(function(){
+    $("div.span2:nth-child(3) > label:nth-child(1)").tooltip();
+});
+
+$(document).ready(function(){
+    $(".searchbar > label:nth-child(1)").tooltip();
+});
