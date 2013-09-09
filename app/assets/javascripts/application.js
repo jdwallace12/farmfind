@@ -65,3 +65,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("div.span2:nth-child(3) > label:nth-child(1)").tooltip();
 });
+
+$(document).ready(function(){
+    $(".searchbar > label:nth-child(1)").tooltip();
+});
