@@ -55,7 +55,9 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
-    $("a[rel=tooltip]").tooltip();
+    $("a[rel=tooltip]").tooltip({
+      'delay': { show: 900, hide: 300 }
+    });
 });
 
 
