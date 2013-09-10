@@ -58,14 +58,21 @@ $(document).ready(function(){
     $("a[rel=tooltip]").tooltip();
 });
 
+
 $(document).ready(function(){
-    $("#new_q > label:nth-child(2)").tooltip();
+    $("#new_q > label:nth-child(2)").tooltip({
+      'delay': { show: 900, hide: 300 }
+    });
 });
 
 $(document).ready(function(){
-    $("div.span2:nth-child(3) > label:nth-child(1)").tooltip();
+    $("div.span2:nth-child(3) > label:nth-child(1)").tooltip({
+       'delay': { show: 900, hide: 300 }
+    });
 });
 
 $(document).ready(function(){
-    $(".searchbar > label:nth-child(1)").tooltip();
+    $(".searchbar > label:nth-child(1)").tooltip({
+       'delay': { show: 900, hide: 300 }
+    });
 });
