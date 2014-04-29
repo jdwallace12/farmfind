@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
 gem 'pg'
+gem 'polylines'
 gem 'devise'
 gem 'country_select'
 gem 'gmaps4rails'
@@ -17,6 +17,7 @@ gem 'ransack'
 gem 'nokogiri'
 gem 'faker'
 gem 'populator'
+gem 'lunchy'
 
 group :test do
   gem 'webmock'

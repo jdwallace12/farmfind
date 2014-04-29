@@ -17,7 +17,6 @@ development:
   encoding: unicode
   database: farmfind_development
   pool: 5
-  username:
   password:
   host: 127.0.0.1
 
@@ -44,7 +43,6 @@ test:
   encoding: unicode
   database: farmfind_test
   pool: 5
-  username:
   password:
   host: 127.0.0.1
 
@@ -53,6 +51,5 @@ production:
   encoding: unicode
   database: farmfind_production
   pool: 5
-  username:
   password:
   host: 127.0.0.1
