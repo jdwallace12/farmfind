@@ -1,46 +1,53 @@
+<div class="wrap">
+  <div class="row-fluid">
 
-<div class="row-fluid">
- <div class="sign-in">
-  <% if user_signed_in? %>
-  <div class="span6 offset6">
-    <p>Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to "Edit Profile", edit_user_registration_path %> | 
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
-      <%= link_to "Submit a Farm", new_farm_path %>
-      <% unless current_user.farms.empty?%> |
-      <%= link_to "View Your #{'Farm'.pluralize current_user.farms.count}", farms_path %>
+    <div class="sign-in">
+      <% if user_signed_in? %>
+          <div class="span6 offset6">
+            <p>Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to "Edit Profile", edit_user_registration_path %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
+              <%= link_to "Submit a Farm", new_farm_path %>
+              <% unless current_user.farms.empty? %> |
+                  <%= link_to "View Your #{'Farm'.pluralize current_user.farms.count}", farms_path %>
+              <% end %>
+          </div>
+      <% else %>
+          <div class="span2 offset10">
+            <h4>
+              <%= link_to "Sign Up", new_user_registration_path %> |
+              <%= link_to "Sign In", new_user_session_path %>
+            </h4>
+          </div>
       <% end %>
     </div>
-    <% else %>
-    <div class="span2 offset10">
-      <h4> 
-        <%= link_to "Sign Up", new_user_registration_path %> |  
-        <%= link_to "Sign In", new_user_session_path %>
-      </h4>
-    </div>
-    <% end %> 
-  </div>
-</div>
-<div class="welcome">
-  <div class="row-fluid"> 
-    <div class="jumbotron">
-      <h1>
-        Welcome to Farm Finder
-        <br>
-      </h1>
-      <div class="callout">
-        <p class="lead">
-          Want fresh food? Find a local farm CSA near you.
-          <br>
-          Let the world know about your farm.  Share your information about your csa share.
-          <br>
-          <br>
-          <br>
-        </p>
-      </div>
+    <div class='skrollr_image' data-0='background-position:0 -300px;' data-500='background-position:0px -640px;'>
+      <div class="welcome">
+        <div class="row-fluid full_width">
+          <div class="jumbotron">
+            <h1>
+              Welcome to Farm Finder
+              <br>
+            </h1>
 
-      <div class="span3 offset4 " class="text-center">
-        <button class="btn btn-large btn-success" id="searchfarm"><i class="icon-search icon-white"></i>Search Farms</button>
+            <div class="callout">
+              <p class="lead">
+                Want fresh food? Find a local farm CSA near you.
+                <br>
+                Let the world know about your farm. Share your information about your csa share.
+                <br>
+                <br>
+                <br>
+              </p>
+            </div>
+
+            <div class="span3 offset4 " class="text-center">
+              <button class="btn btn-large btn-success" id="searchfarm"><i class="icon-search icon-white"></i>Search
+                Farms
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -48,117 +55,123 @@
 </div>
 <div class="map">
 
- <div class="row-fluid">
-  <div class="span12">
-    <%= gmaps4rails(@json) %>
+  <div class="row-fluid">
+    <div class="span12">
+      <%= gmaps4rails(@json) %>
+    </div>
   </div>
-</div>
 </div>
 <div class="row-fluid">
   <div class="footer-bar">
     <div class="panel">
-    </br>
-  </br>
-</br>
-    <% Farm.recent(3).each do |farm| %>
+      </br>
+      </br>
+      </br>
+      <% Farm.recent(3).each do |farm| %>
     <span><%= image_tag farm.image_url(:thumb).to_s %>
-    <h5><%= farm.name %></h5></span>
-    <h6><%= farm.city %> ,
-        <%= farm.state %>
-    </h6>
-  </br>
-    <% end %>
+      <h5><%= farm.name %></h5></span>
+          <h6><%= farm.city %> ,
+            <%= farm.state %>
+          </h6>
+          </br>
+      <% end %>
 
-  </div>
-  <a class="trigger" href="#">Recently Added Farms</a>
-<div class="feature-panel">
-    <div class="feature-content">
-  <h3>Featured Farm</h3>  
-  <% Farm.recent(1).each do |farm| %>
-   <%= image_tag farm.image_url(:thumb).to_s %>
-    <h5>Your Name Here</h5>
-    <h6>Your City, State</h6>
-  </br>
-    <% end %>
-  </div>
-  <div class="feature-howto">
-  <%= link_to 'Learn how to be featured', featured_path %>
-  </div>
-  </div>
-  <a class="feature-trigger" href="#">Featured Farm</a> 
+    </div>
+    <a class="trigger" href="#">Recently Added Farms</a>
+
+    <div class="feature-panel">
+      <div class="feature-content">
+        <h3>Featured Farm</h3>
+        <% Farm.recent(1).each do |farm| %>
+            <%= image_tag farm.image_url(:thumb).to_s %>
+            <h5>Your Name Here</h5>
+            <h6>Your City, State</h6>
+            </br>
+        <% end %>
+      </div>
+      <div class="feature-howto">
+        <%= link_to 'Learn how to be featured', featured_path %>
+      </div>
+    </div>
+    <a class="feature-trigger" href="#">Featured Farm</a>
   </div>
   <div id="footer">
-   <div class="row-fluid">
-    <div class="span4">
-     <div class="left">
-       <h3>
+    <div class="row-fluid">
+      <div class="span4">
+        <div class="left">
+          <h3>
 
-        Calling All Farmers 
-      </h3>
-      <% if user_signed_in? %>
+            Calling All Farmers
+          </h3>
+          <% if user_signed_in? %>
 
-      <%= link_to "<i class=\"icon-plus icon-white\"></i>Add Your Farm".html_safe, new_farm_path, :class => "btn btn-large btn-success" %>
-      <% unless current_user.farms.empty?%>
-      <%= link_to "<i class=\"icon-wrench icon-white\"></i>View Your #{'Farm'.pluralize current_user.farms.count}" .html_safe, farms_path, :class => "btn btn-large btn-warning", :title => "You have #{current_user.farms.count} #{'farm'.pluralize current_user.farms.count}", :rel => "tooltip", "data-placement" => 'top' %>
+              <%= link_to "<i class=\"icon-plus icon-white\"></i>Add Your Farm".html_safe, new_farm_path, :class => "btn btn-large btn-success" %>
+              <% unless current_user.farms.empty? %>
+                  <%= link_to "<i class=\"icon-wrench icon-white\"></i>View Your #{'Farm'.pluralize current_user.farms.count}".html_safe, farms_path, :class => "btn btn-large btn-warning", :title => "You have #{current_user.farms.count} #{'farm'.pluralize current_user.farms.count}", :rel => "tooltip", "data-placement" => 'top' %>
 
-      <!-- <span class="badge badge-info"><%= current_user.farms.count %></span> -->
-      
-      <% end %>
-      <% else %>
-      <%= link_to "Signup", new_user_registration_path, :class => "btn btn-large btn-info" %>
-      <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large" %>
-      <% end %> 
-      <p>
-        List your farm for the public to see.
-      </p>
-    </div>
+                  <!-- <span class="badge badge-info"><%= current_user.farms.count %></span> -->
+
+              <% end %>
+          <% else %>
+              <%= link_to "Signup", new_user_registration_path, :class => "btn btn-large btn-info" %>
+              <%= link_to "Sign In", new_user_session_path, :class => "btn btn-large" %>
+          <% end %>
+          <p>
+            List your farm for the public to see.
+          </p>
+        </div>
+      </div>
+      <div class="span2">
+        <%= simple_form_for @search, url: root_path do |f| %>
+            <%= f.label :certification_cont, "Filter by Certification", :title => "Filter the map by certification type, such as organic or conventional", :rel => "tooltip", "data-placement" => 'top' %>
+            <%= f.select :certification_cont, ["", "organic", "conventional", "none"] %>
+
+            </div>
+            <div class="span2">
+
+              <%= f.label :share_price_lteq, "Spending Limit US$", :title => "Select the maximum amount you would like to spend", :rel => "tooltip", "data-placement" => 'top' %>
+              <%= f.select :share_price_lteq, (0..2000).step(50).unshift("") %>
+            </div>
+            <div class="span2">
+              <div class="searchbar" data-provide="typeahead" autocomplete="off">
+                <%= f.label :name_cont, "Search by name", :title => "Know the name a farm you are looking for?  Search for it here", :rel => "tooltip", "data-placement" => 'top' %>
+                <%= f.input :name_cont, label: false %>
+              </div>
+            </div>
+            <div class="span2">
+              <div class="right">
+                <%= f.submit "Filter Results", :class => "btn btn-primary" %>
+        <% end %>
+        </div>
+        </div>
+        <div class="row-fluid">
+          <ul class="footer-links">
+            <div class="span3 pull-right">
+              <li><%= link_to 'About', about_path %></li>
+              <li><%= link_to 'Terms of Service', terms_path %></li>
+              <li><%= link_to 'Feedback', feedback_path %></li>
+          </ul>
+        </div>
+        </div>
   </div>
-  <div class="span2">
-    <%= simple_form_for @search, url: root_path do |f| %>
-    <%= f.label :certification_cont, "Filter by Certification", :title => "Filter the map by certification type, such as organic or conventional", :rel => "tooltip", "data-placement" => 'top'  %>
-    <%= f.select :certification_cont, ["","organic", "conventional", "none"] %> 
 
-  </div>
-  <div class="span2">
-
-    <%= f.label :share_price_lteq, "Spending Limit US$", :title => "Select the maximum amount you would like to spend", :rel => "tooltip", "data-placement" => 'top' %>
-    <%= f.select :share_price_lteq, (0..2000).step(50).unshift("") %> 
-  </div>
-  <div class="span2">
-    <div class="searchbar" data-provide="typeahead" autocomplete="off">
-    <%= f.label :name_cont, "Search by name", :title => "Know the name a farm you are looking for?  Search for it here", :rel => "tooltip", "data-placement" => 'top' %>
-    <%= f.input :name_cont, label: false %>
 </div>
-  </div>
-  <div class="span2">
-    <div class="right">
-      <%= f.submit "Filter Results", :class => "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-  <div class="row-fluid">
-      <ul class="footer-links">
-        <div class="span3 pull-right">
-  <li><%= link_to 'About', about_path %></li>
-  <li><%= link_to 'Terms of Service', terms_path %></li>
-  <li><%= link_to 'Feedback', feedback_path %></li>
-</ul>
-</div>
-  </div>
 </div>
 
-</div>
-</div>
+<script type="text/javascript">
+    var s = skrollr.init();
+</script>
 
 
 <% if search_performed? %>
 
-<script>
-$(function(){
-  window.location = window.location.href + "#footer";
-});
+    <script>
 
-</script>
+        $(function () {
+            window.location = window.location.href + "#footer";
+        });
+
+    </script>
 
 
 <% end %>

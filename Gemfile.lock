@@ -199,6 +199,8 @@ GEM
       carrierwave
       rails (~> 3.2.1)
       simple_form (~> 2.0.0.rc)
+    skrollr-rails (0.6.21)
+      rails (>= 3.1.0)
     slop (3.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -257,6 +259,7 @@ DEPENDENCIES
   shoulda-matchers
   simple_form (= 2.0.0)
   simple_form_fancy_uploads
+  skrollr-rails
   uglifier (>= 1.0.3)
   vcr
   webmock

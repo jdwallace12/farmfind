@@ -18,6 +18,7 @@ gem 'nokogiri'
 gem 'faker'
 gem 'populator'
 gem 'lunchy'
+gem 'skrollr-rails'
 
 group :test do
   gem 'webmock'
