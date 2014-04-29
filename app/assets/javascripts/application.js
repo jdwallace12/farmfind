@@ -22,7 +22,7 @@ $(function() {
   $(".alert").delay(1500).fadeOut(1000);
 
   $("#searchfarm").click(function() {
-    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    $("html, body").animate({ scrollTop: $(document).height() }, 4000);
     return false;
 
   $("button").click(function () {
