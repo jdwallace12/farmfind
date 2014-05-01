@@ -63,37 +63,38 @@
 </div>
 <div class="row-fluid">
   <div class="footer-bar">
-    <div class="panel">
-      </br>
-      </br>
-      </br>
-      <% Farm.recent(3).each do |farm| %>
-    <span><%= image_tag farm.image_url(:thumb).to_s %>
-      <h5><%= farm.name %></h5></span>
-          <h6><%= farm.city %> ,
-            <%= farm.state %>
-          </h6>
-          </br>
-      <% end %>
+    <!--<div class="panel">-->
+      <!--</br>-->
+      <!--</br>-->
+      <!--</br>-->
+      <!--<#% Farm.recent(3).each do |farm| %>-->
+    <!--<span>-->
+    <!--<%#= image_tag farm.image_url(:thumb).to_s %>-->
+      <!--<h5><%#= farm.name %></h5></span>-->
+          <!--<h6><%#= farm.city %> ,-->
+            <!--<%#= farm.state %>-->
+          <!--</h6>-->
+          <!--</br>-->
+      <!--<%# end %>-->
 
-    </div>
-    <a class="trigger" href="#">Recently Added Farms</a>
+    <!--</div>-->
+    <!--<a class="trigger" href="#">Recently Added Farms</a>-->
 
-    <div class="feature-panel">
-      <div class="feature-content">
-        <h3>Featured Farm</h3>
-        <% Farm.recent(1).each do |farm| %>
-            <%= image_tag farm.image_url(:thumb).to_s %>
-            <h5>Your Name Here</h5>
-            <h6>Your City, State</h6>
-            </br>
-        <% end %>
-      </div>
-      <div class="feature-howto">
-        <%= link_to 'Learn how to be featured', featured_path %>
-      </div>
-    </div>
-    <a class="feature-trigger" href="#">Featured Farm</a>
+    <!--<div class="feature-panel">-->
+      <!--<div class="feature-content">-->
+        <!--<h3>Featured Farm</h3>-->
+        <!--<%# Farm.recent(1).each do |farm| %>-->
+            <!--<%#= image_tag farm.image_url(:thumb).to_s %>-->
+            <!--<h5>Your Name Here</h5>-->
+            <!--<h6>Your City, State</h6>-->
+            <!--</br>-->
+        <!--<%# end %>-->
+      <!--</div>-->
+      <!--<div class="feature-howto">-->
+        <!--<%#= link_to 'Learn how to be featured', featured_path %>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<a class="feature-trigger" href="#">Featured Farm</a>-->
   </div>
   <div id="footer">
     <div class="row-fluid">
